@@ -32,12 +32,6 @@ ul {
     list-style-type: none;
 }
 
-.column {
-    flex: 50%;
-    align-items: center;
-    justify-content: center;
-}
-
 .Title {
     display: flex;
     justify-content: center;
@@ -80,10 +74,45 @@ span.spacer {
     width: 25%;
 }
 
+.MainInfo {
+    display: flex;
+    flex-direction: row;
+    height: 70%;
+}
+
+.Column {
+    flex: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.JobBlurb {
+    font-size: 55%;
+    font-weight: bold;
+}
+
 .TechUsed {
     display: flex;
     flex-direction: row; 
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
+    margin: 0%;
+    padding: 0%;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+.TechnologyBubble {
+    font-size: 70%;
+    font-weight: bold;
+    border-style: solid;
+    border-width: thin;
+    border-color: #bbbbbb;
+    padding: 1% 1.5%;
+    margin: 0.5%;
+    border-radius:  7% / 25%;
+    background-color: #eeeeee;
+}
+
 
 </style>
 </head>
@@ -109,10 +138,9 @@ span.spacer {
 </header>
 
 <!-- First Column -->
-<section>
-<div class="column" id="first">
+<section class="MainInfo">
+<div class="Column">
 <h3 class="LargeSection">Experience</h3>
-
 <div class="BigInfo">
 <h5 class="Employer">Westpac</h5>
 <table class="Timeline">
@@ -120,7 +148,7 @@ span.spacer {
     <td class="RoleTime">2020 - Present</td>
 </table>
 <p class="JobBlurb">
-   During the year of 2020 I have been working as a Test Engineer (both as a contractor and permanent employee) for Westpac New Zealand. I have worked within the Data Tribe's Data Lineage squad supporting the EDC platform using shell scripts via ssh connections to automate supporting operations that are not inbuilt into the EDC product itself
+During the year of 2020 I have been working as a Test Engineer (both as a contractor and permanent employee) for Westpac New Zealand. I have worked within the Data Tribe's Data Lineage squad supporting the EDC platform using shell scripts via ssh connections to automate supporting operations that are not inbuilt into the EDC product itself. My primary duties within Test Chapter, included automating the data completeness throughout the EDC data pipelines across its many connectors to the many new and legacy business data systems. Working with the wider chapter I have completed the first iterations of a library that would create the masking layer allowing accurate test data that will reflect production allowing for better testing across the many systems within the banks architecture.
 </p>
 <ul class="TechUsed">
 <li class="TechnologyBubble">Scala</li>
@@ -171,7 +199,7 @@ span.spacer {
     <td class="RoleTime">2016 & 2017</td>
 </table>
 <p class="JobBlurb">
-Assurity is a technology consultancy company that started in Wellginton NZ. As consultants we found ourselves supporting the challenges that come with deliverin enterprise technologies using the project managment tool HP ALM. During my time there I consulted for many government departments, learning the intrcacies of software delivery. I used Selenium and Junit to create test suites as well as experimenting with Jenkins, Maven, and Gradle for building and creating CI/CD pipelines, with git as a version control tool. I also worked with SQL to create and use test data, using tools such as ORacle DB and MySQL
+Assurity is a technology consultancy company that started in Wellginton NZ. As consultants we found ourselves supporting the challenges that come with deliverin enterprise technologies using the project managment tool HP ALM. During my time there I consulted for many government departments, learning the intrcacies of software delivery. I used Selenium and Junit to create test suites as well as experimenting with Jenkins, Maven, and Gradle for building and creating CI/CD pipelines, with git as a version control tool. I also worked with SQL to create and use test data, using tools such as Oracle DB and MySQL
 </p>
 <ul class="TechUsed">
 <li class="TechnologyBubble">SQL</li>
@@ -186,35 +214,9 @@ Assurity is a technology consultancy company that started in Wellginton NZ. As c
 <li class="TechnologyBubble">Jenkins</li>
 </ul>
 </div>
-
-
-<h4 class="SmallSection">Other Experience</h4>
-<div class="Small Info">
-<h6 class="SmallHeader">Victoria University of Wellington</h6>
-<table class="Timeline">
-    <td class="RoleTitle">Residential Advisor</td>
-    <td class="RoleTime">Year of 2015</td>
-</table>
 </div>
-<div class="Small Info">
-<h6 class="SmallHeader">Inspiration Education</h6>
-<table class="Timeline">
-    <td class="RoleTitle">Senior Tutor Mathematics & English</td>
-    <td class="RoleTime">Years 2012 - 2015</td>
-</table>
-</div>
-<div class="Small Info">
-<h6 class="SmallHeader">Voda Model Management</h6>
-<table class="Timeline">
-    <td class="RoleTitle">Model</td>
-    <td class="RoleTime">Years 2015 - 2017</td>
-</table>
-</div>
-<!--End of Column 1-->
-</div>
-
 <!--Second Column-->
-<div class="column" id="second">
+<div class="Column"> 
 <h3 class="LargeSection">Education</h3>
 <h5 class="Employer">Graduate Diploma Software Development</h5>
 <ul class="TechUsed">
@@ -229,16 +231,44 @@ Assurity is a technology consultancy company that started in Wellginton NZ. As c
 <li class="TechnologyBubble">Git</li>
 <li class="TechnologyBubble">UML</li>
 </ul>
-
 <h5 class="Employer">Bachelor of Arts - Economics</h5>
+<!--End of Second Column-->
+</div>
+<!--End of Big Info-->
+</section>
+
+<!--Small Info-->
+<section class="BottomSection">
+<div class="Column">
+<h4 class="SmallSection">Other Experience</h4>
+<div class="SmallInfo">
+<h6 class="SmallHeader">Victoria University of Wellington</h6>
+<table class="Timeline">
+    <td class="RoleTitle">Residential Advisor</td>
+    <td class="RoleTime">Year of 2015</td>
+</table>
+</div>
+<div class="SmallInfo">
+<h6 class="SmallHeader">Inspiration Education</h6>
+<table class="Timeline">
+    <td class="RoleTitle">Senior Tutor Mathematics & English</td>
+    <td class="RoleTime">Years 2012 - 2015</td>
+</table>
+</div>
+<div class="SmallInfo">
+<h6 class="SmallHeader">Voda Model Management</h6>
+<table class="Timeline">
+    <td class="RoleTitle">Model</td>
+    <td class="RoleTime">Years 2015 - 2017</td>
+</table>
+</div>
+<!--End of Column 1-->
+</div>
+<!--Start of Column 2-->
+<div class="Column">
 <h4 class="SmallSection">Qualifications</h4>
 <h6 class="SmallHeader">ISTQB Foundation Level</h6>
 <h6 class="SmallHeader">NZ Speech Qualifications - Grade 8 Honours</h6>
-<h4 class="SmallSection">Digital Projects</h4>
-<h6 class="SmallHeader">Rugby 7s National Tournament Application</h6>
-<div>
-<li class="TechnologyBubble"></li>
-</div>
 <!--End of Column 2-->
 </div>
 </section>
