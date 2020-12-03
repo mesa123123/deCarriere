@@ -18,7 +18,6 @@ html, body {
 }
 
 header {
-    background-color: #cccccc;
     padding-bottom: 0%;
     padding-top: 1%;
     margin: 0%;
@@ -27,6 +26,10 @@ header {
 section {
     display: flex;
     margin-top: 0%;
+}
+
+ul {
+    list-style-type: none;
 }
 
 .column {
@@ -43,7 +46,7 @@ section {
 }
 
 .Title > h1 {
-    font-size: 350%;
+    font-size: 500%;
     margin: 0;
 }
 
@@ -51,13 +54,14 @@ section {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #888888;
+    background-color: #bbbbbb;
     padding-top: 1%;
     padding-bottom: 1%;
     border-style: solid;
     border-color: transparent;
     border-top-color: #000000;
     border-bottom-color: #000000;
+    border-width: 0.15em;
 }
 
 .CommsLinks > i.seperator {
@@ -74,6 +78,11 @@ section {
 span.spacer {
     width: 25%;
 }
+
+.TechUsed {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap-reverse;
 
 </style>
 </head>
@@ -102,40 +111,134 @@ span.spacer {
 <section>
 <div class="column" id="first">
 <h3 class="LargeSection">Experience</h3>
-<h5 class="BigHeader">Senior Automation Test Engineer</h5>
-<div class="TechUsed">
-<span class="TechnologyBubble"></span>
-</div>
-<h5 class="BigHeader">Digital & Data Specialist</h5>
-<span class="TechnologyBubble"></span>
-<h5 class="BigHeader">Test Analyst</h5>
-<div class="TechUsed">
-<span class="TechnologyBubble"></span>
+
+<div class="BigInfo">
+<h5 class="Employer">Westpac</h5>
+<table class="Timeline">
+    <td class="RoleTitle">Senior Automation Test Engineer</td>
+    <td class="RoleTime">2020 - Present</td>
+</table>
+<p class="JobBlurb">
+    
+</p>
+<ul class="TechUsed">
+<li class="TechnologyBubble">Scala</li>
+<li class="TechnologyBubble">Spark</li>
+<li class="TechnologyBubble">Linux</li>
+<li class="TechnologyBubble">Python</li>
+<li class="TechnologyBubble">Hadoop HDFS</li>
+<li class="TechnologyBubble">RHEL Servers</li>
+<li class="TechnologyBubble">Shell</li>
+<li class="TechnologyBubble">Zepplin</li>
+<li class="TechnologyBubble">Jupyter</li>
+<li class="TechnologyBubble">SSH</li>
+<li class="TechnologyBubble">Docker</li>
+<li class="TechnologyBubble">Jira</li>
+<li class="TechnologyBubble">Confluence</li>
+</ul>
 </div>
 
+<div class="BigInfo">
+<h5 class="Employer">Heineken</h5>
+<table class="Timeline">
+    <td class="RoleTitle">Data & Digital Specialist</td>
+    <td class="RoleTime">Year of 2019</td>
+</table>
+<p class="JobBlurb">
+   Heineken is within its early stages of digital transformation, and within its New Zealand Headquarters my role was to lead this transformation within the production side of the business. I creating (and leading the evolution of) a regional strategy that aligned with the global vision focussing on experimenting with new technologies, as well as facilitated the training of brewery and supply chain leadership for agile and design thinking as a way of working with digital transformation projects. Day to day I lead projects that were ongoing in the new zealand office and contributed to a network of Data & Digital Specialists around the world to share best practices and learnings.
+   When needed I also  contributed my skills as a developer, building applications with Python, Javascript, SQLite and MYSQL. To ensure god development practices and long term serviceability I built test harnesses using the Pytest and Jest testing frameworks.
+   One of my key projects was moving the production and brewing departments away from using excel heavy business processes to adapting PowerBI, Power Query, and Python Scripts to automate tasks within the data gathering and visibility.
+</p>
+<ul class="TechUsed">
+<li class="TechnologyBubble">Python</li>
+<li class="TechnologyBubble">SQlite</li>
+<li class="TechnologyBubble">Javascript</li>
+<li class="TechnologyBubble">MS Project</li>
+<li class="TechnologyBubble">Anaconda</li>
+<li class="TechnologyBubble">Jest </li>
+<li class="TechnologyBubble">Power BI</li>
+<li class="TechnologyBubble">Pytest</li>
+<li class="TechnologyBubble">Selenium</li>
+<li class="TechnologyBubble">Azure DevOps</li>
+</ul>
+</div>
+
+<div class="BigInfo">
+<h5 class="Employer">Assurity</h5>
+<table class="Timeline">
+    <td class="RoleTitle">Test Analyst</td>
+    <td class="RoleTime">2016 & 2017</td>
+</table>
+<p class="JobBlurb">
+Assurity is a technology consultancy company that started in Wellginton NZ. As consultants we found ourselves supporting the challenges that come with deliverin enterprise technologies using the project managment tool HP ALM. During my time there I consulted for many government departments, learning the intrcacies of software delivery. I used Selenium and Junit to create test suites as well as experimenting with Jenkins, Maven, and Gradle for building and creating CI/CD pipelines, with git as a version control tool. I also worked with SQL to create and use test data, using tools such as ORacle DB and MySQL
+</p>
+<ul class="TechUsed">
+<li class="TechnologyBubble">SQL</li>
+<li class="TechnologyBubble">Git</li>
+<li class="TechnologyBubble">Java</li>
+<li class="TechnologyBubble">Maven</li>
+<li class="TechnologyBubble">Gradle</li>
+<li class="TechnologyBubble">HP ALM</li>
+<li class="TechnologyBubble">W3C Driver (Selenium)</li>
+<li class="TechnologyBubble">MySQL</li>
+<li class="TechnologyBubble">Oracle DB</li>
+<li class="TechnologyBubble">Jenkins</li>
+</ul>
+</div>
+
+
 <h4 class="SmallSection">Other Experience</h4>
-<h6 class="SmallHeader">Residential Advisor</h6>
-<h6 class="SmallHeader">Senior Tutor - Mathematics & English</h6>
-<h6 class="SmallHeader">Model</h6>
+<div class="Small Info">
+<h6 class="SmallHeader">Victoria University of Wellington</h6>
+<table class="Timeline">
+    <td class="RoleTitle">Residential Advisor</td>
+    <td class="RoleTime">Year of 2015</td>
+</table>
+</div>
+<div class="Small Info">
+<h6 class="SmallHeader">Inspiration Education</h6>
+<table class="Timeline">
+    <td class="RoleTitle">Senior Tutor Mathematics & English</td>
+    <td class="RoleTime">Years 2012 - 2015</td>
+</table>
+</div>
+<div class="Small Info">
+<h6 class="SmallHeader">Voda Model Management</h6>
+<table class="Timeline">
+    <td class="RoleTitle">Model</td>
+    <td class="RoleTime">Years 2015 - 2017</td>
+</table>
+</div>
+<!--End of Column 1-->
 </div>
 
 <!--Second Column-->
 <div class="column" id="second">
 <h3 class="LargeSection">Education</h3>
-<h5 class="BigHeader">Graduate Diploma Software Development</h5>
-<div class="TechUsed">
-<span class="TechnologyBubble"></span>
-</div>
+<h5 class="Employer">Graduate Diploma Software Development</h5>
+<ul class="TechUsed">
+<li class="TechnologyBubble">Python</li>
+<li class="TechnologyBubble">Javascript</li>
+<li class="TechnologyBubble">Vue</li>
+<li class="TechnologyBubble">Enterprise Architect</li>
+<li class="TechnologyBubble">MSSQL</li>
+<li class="TechnologyBubble">SQLite</li>
+<li class="TechnologyBubble">C#</li>
+<li class="TechnologyBubble">Azure</li>
+<li class="TechnologyBubble">Git</li>
+<li class="TechnologyBubble">UML</li>
+</ul>
 
-<h5 class="BigHeader">Bachelor of Arts - Economics</h5>
+<h5 class="Employer">Bachelor of Arts - Economics</h5>
 <h4 class="SmallSection">Qualifications</h4>
 <h6 class="SmallHeader">ISTQB Foundation Level</h6>
 <h6 class="SmallHeader">NZ Speech Qualifications - Grade 8 Honours</h6>
 <h4 class="SmallSection">Digital Projects</h4>
 <h6 class="SmallHeader">Rugby 7s National Tournament Application</h6>
 <div>
-<span class="TechnologyBubble"></span>
+<li class="TechnologyBubble"></li>
 </div>
+<!--End of Column 2-->
 </div>
 </section>
 
