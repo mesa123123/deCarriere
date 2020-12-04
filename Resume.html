@@ -7,25 +7,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@100;300&display=swap" rel="stylesheet">
 <style type="text/css" media="screen">
+:root {
+    --headerShade: #bbbbbb;
+    --titleFontSize: 500%;
+}
+
 * {
     font-family: 'Ubuntu';
+    margin: 0%;
+    padding: 0%;
 }
 
 html, body {
     height:100%;
-    padding:0;
-    margin:0;
 }
 
 header {
     padding-bottom: 0%;
     padding-top: 1%;
-    margin: 0%;
 }
 
 section {
     display: flex;
-    margin-top: 0%;
 }
 
 ul {
@@ -40,15 +43,14 @@ ul {
 }
 
 .Title > h1 {
-    font-size: 500%;
-    margin: 0;
+    font-size: var(--titleFontSize);
 }
 
 .CommsLinks {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #bbbbbb;
+    background-color: var(--headerShade);
     padding-top: 1%;
     padding-bottom: 1%;
     border-style: solid;
@@ -78,38 +80,111 @@ span.spacer {
     display: flex;
     flex-direction: row;
     height: 70%;
+    margin-top: 1%;
+}
+
+.BottomSection {
+    display: flex;
+    flex-direction: row;
+    height: 20%;
 }
 
 .Column {
-    flex: 50%;
+    flex: 49%;
     align-items: center;
     justify-content: center;
+}
+
+.FirstColumn {
+    margin-right: 0.5%;
+}
+
+.SecondColumn {
+    margin-left: 0.5%;
+}
+
+.BigHeader {
+    font-size: 125%;
+    text-align: center;
+    margin-bottom: 2%;
+    padding-bottom: 3%;
+    padding-top: 3%;
+    background-color: var(--headerShade); 
+}
+
+.SmallHeader {
+    font-size: 90%;
+    text-align: center;
+    margin-bottom: 1%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    background-color: var(--headerShade); 
+}
+
+.BigInfo,.SmallInfo {
+    width: 90%;
+    margin-left: 1.5%;
+    margin-right: 8.5%;
+}
+
+.Employer {
+    font-size: 100%;
+}
+
+.Timeline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+}
+
+
+.RoleTitle {
+    font-size: 70%;
+    text-align: left;
+    font-style: italic;
+}
+
+.RoleTime {
+    text-align: right;
+    font-size: 70%;
+    font-style: italic;
 }
 
 .JobBlurb {
     font-size: 55%;
     font-weight: bold;
+    margin-bottom: 1%;
+}
+
+.TechThingy > p {
+    font-size: 50%;
+    font-weight: bold;
+    font-style: italic; 
+    text-decoration: underline;
 }
 
 .TechUsed {
     display: flex;
     flex-direction: row; 
     flex-wrap: wrap;
-    margin: 0%;
-    padding: 0%;
     justify-content: flex-start;
     align-content: flex-start;
+    margin: 1%;
+    margin-top: 1.5%;
 }
 
 .TechnologyBubble {
-    font-size: 70%;
+    font-size: 55%;
     font-weight: bold;
     border-style: solid;
     border-width: thin;
     border-color: #bbbbbb;
-    padding: 1% 1.5%;
-    margin: 0.5%;
-    border-radius:  7% / 25%;
+    padding: 0.25% 0.5%;
+    margin: 0.25%;
+    border-radius:  3% / 25%;
     background-color: #eeeeee;
 }
 
@@ -126,11 +201,11 @@ span.spacer {
 <div class="CommsLinks">
 <span class="spacer"></span>
 <i class="address">bowmanpete123@gmail.com</i>
-<i class="seperator">-</i>
+<i class="seperator"></i>
 <i class="address">+64273111199</i>
-<i class="seperator">-</i>
+<i class="seperator"></i>
 <i class="address">linkedin.com/in/bowmanpete123</i>
-<i class="seperator">-</i>
+<i class="seperator"></i>
 <i class="address">github.com/mesa123123</i>
 <span class="spacer"></span>
 </div>
@@ -139,23 +214,26 @@ span.spacer {
 
 <!-- First Column -->
 <section class="MainInfo">
-<div class="Column">
-<h3 class="LargeSection">Experience</h3>
+<div class="Column FirstColumn">
+<h3 class="BigHeader">Experience</h3>
 <div class="BigInfo">
 <h5 class="Employer">Westpac</h5>
-<table class="Timeline">
-    <td class="RoleTitle">Senior Automation Test Engineer</td>
-    <td class="RoleTime">2020 - Present</td>
-</table>
+<div class="Timeline">
+    <p class="RoleTitle">Senior Automation Test Engineer</p>
+    <p class="RoleTime">2020 - Present</p>
+</div>
 <p class="JobBlurb">
 During the year of 2020 I have been working as a Test Engineer (both as a contractor and permanent employee) for Westpac New Zealand. I have worked within the Data Tribe's Data Lineage squad supporting the EDC platform using shell scripts via ssh connections to automate supporting operations that are not inbuilt into the EDC product itself. My primary duties within Test Chapter, included automating the data completeness throughout the EDC data pipelines across its many connectors to the many new and legacy business data systems. Working with the wider chapter I have completed the first iterations of a library that would create the masking layer allowing accurate test data that will reflect production allowing for better testing across the many systems within the banks architecture.
 </p>
+<div class="TechThingy">
+<p>Technology Used in Role:</p>
 <ul class="TechUsed">
 <li class="TechnologyBubble">Scala</li>
 <li class="TechnologyBubble">Spark</li>
 <li class="TechnologyBubble">Linux</li>
 <li class="TechnologyBubble">Python</li>
-<li class="TechnologyBubble">Hadoop HDFS</li>
+<li class="TechnologyBubble">Hadoop</li>
+<li class="TechnologyBubble">HDFS</li>
 <li class="TechnologyBubble">RHEL Servers</li>
 <li class="TechnologyBubble">Shell</li>
 <li class="TechnologyBubble">Zepplin</li>
@@ -166,18 +244,21 @@ During the year of 2020 I have been working as a Test Engineer (both as a contra
 <li class="TechnologyBubble">Confluence</li>
 </ul>
 </div>
+</div>
 
 <div class="BigInfo">
 <h5 class="Employer">Heineken</h5>
-<table class="Timeline">
-    <td class="RoleTitle">Data & Digital Specialist</td>
-    <td class="RoleTime">Year of 2019</td>
-</table>
+<div class="Timeline">
+    <p class="RoleTitle">Data & Digital Specialist</p>
+    <p class="RoleTime">Year of 2019</p>
+</div>
 <p class="JobBlurb">
    Heineken is within its early stages of digital transformation, and within its New Zealand Headquarters my role was to lead this transformation within the production side of the business. I creating (and leading the evolution of) a regional strategy that aligned with the global vision focussing on experimenting with new technologies, as well as facilitated the training of brewery and supply chain leadership for agile and design thinking as a way of working with digital transformation projects. Day to day I lead projects that were ongoing in the new zealand office and contributed to a network of Data & Digital Specialists around the world to share best practices and learnings.
    When needed I also  contributed my skills as a developer, building applications with Python, Javascript, SQLite and MYSQL. To ensure god development practices and long term serviceability I built test harnesses using the Pytest and Jest testing frameworks.
    One of my key projects was moving the production and brewing departments away from using excel heavy business processes to adapting PowerBI, Power Query, and Python Scripts to automate tasks within the data gathering and visibility.
 </p>
+<div class="TechThingy">
+<p>Technology Used in Role:</p>
 <ul class="TechUsed">
 <li class="TechnologyBubble">Python</li>
 <li class="TechnologyBubble">SQlite</li>
@@ -191,16 +272,19 @@ During the year of 2020 I have been working as a Test Engineer (both as a contra
 <li class="TechnologyBubble">Azure DevOps</li>
 </ul>
 </div>
+</div>
 
 <div class="BigInfo">
 <h5 class="Employer">Assurity</h5>
-<table class="Timeline">
-    <td class="RoleTitle">Test Analyst</td>
-    <td class="RoleTime">2016 & 2017</td>
-</table>
+<div class="Timeline">
+    <p class="RoleTitle">Test Analyst</p>
+    <p class="RoleTime">2016 & 2017</p>
+</div>
 <p class="JobBlurb">
 Assurity is a technology consultancy company that started in Wellginton NZ. As consultants we found ourselves supporting the challenges that come with deliverin enterprise technologies using the project managment tool HP ALM. During my time there I consulted for many government departments, learning the intrcacies of software delivery. I used Selenium and Junit to create test suites as well as experimenting with Jenkins, Maven, and Gradle for building and creating CI/CD pipelines, with git as a version control tool. I also worked with SQL to create and use test data, using tools such as Oracle DB and MySQL
 </p>
+<div class="TechThingy">
+<p>Technology Used in Role:</p>
 <ul class="TechUsed">
 <li class="TechnologyBubble">SQL</li>
 <li class="TechnologyBubble">Git</li>
@@ -215,10 +299,15 @@ Assurity is a technology consultancy company that started in Wellginton NZ. As c
 </ul>
 </div>
 </div>
+<!--End of FirstColumn-->
+</div>
 <!--Second Column-->
-<div class="Column"> 
-<h3 class="LargeSection">Education</h3>
+<div class="Column SecondColumn"> 
+<h3 class="BigHeader">Education</h3>
+<div class="BigInfo">
 <h5 class="Employer">Graduate Diploma Software Development</h5>
+<div class="TechThingy">
+<p>Technology Used in Role:</p>
 <ul class="TechUsed">
 <li class="TechnologyBubble">Python</li>
 <li class="TechnologyBubble">Javascript</li>
@@ -231,7 +320,11 @@ Assurity is a technology consultancy company that started in Wellginton NZ. As c
 <li class="TechnologyBubble">Git</li>
 <li class="TechnologyBubble">UML</li>
 </ul>
+</div>
+</div>
+<div class="BigInfo">
 <h5 class="Employer">Bachelor of Arts - Economics</h5>
+</div>
 <!--End of Second Column-->
 </div>
 <!--End of Big Info-->
@@ -239,37 +332,61 @@ Assurity is a technology consultancy company that started in Wellginton NZ. As c
 
 <!--Small Info-->
 <section class="BottomSection">
-<div class="Column">
-<h4 class="SmallSection">Other Experience</h4>
+<div class="Column FirstColumn">
+<h4 class="SmallHeader">Other Experience</h4>
 <div class="SmallInfo">
-<h6 class="SmallHeader">Victoria University of Wellington</h6>
-<table class="Timeline">
-    <td class="RoleTitle">Residential Advisor</td>
-    <td class="RoleTime">Year of 2015</td>
-</table>
+<h6 class="Employer">Victoria University of Wellington</h6>
+<div class="Timeline">
+    <p class="RoleTitle">Residential Advisor</p>
+    <p class="RoleTime">Year of 2015</p>
+</div>
 </div>
 <div class="SmallInfo">
-<h6 class="SmallHeader">Inspiration Education</h6>
-<table class="Timeline">
-    <td class="RoleTitle">Senior Tutor Mathematics & English</td>
-    <td class="RoleTime">Years 2012 - 2015</td>
-</table>
+<h6 class="Employer">Inspiration Education</h6>
+<div class="Timeline">
+    <p class="RoleTitle">Senior Tutor Mathematics & English</p>
+    <p class="RoleTime">Years 2012 - 2015</p>
+</div>
 </div>
 <div class="SmallInfo">
-<h6 class="SmallHeader">Voda Model Management</h6>
-<table class="Timeline">
-    <td class="RoleTitle">Model</td>
-    <td class="RoleTime">Years 2015 - 2017</td>
-</table>
+<h6 class="Employer">Voda Model Management</h6>
+<div class="Timeline">
+    <p class="RoleTitle">Model</p>
+    <p class="RoleTime">Years 2015 - 2017</p>
+</div>
 </div>
 <!--End of Column 1-->
 </div>
 <!--Start of Column 2-->
-<div class="Column">
-<h4 class="SmallSection">Qualifications</h4>
-<h6 class="SmallHeader">ISTQB Foundation Level</h6>
-<h6 class="SmallHeader">NZ Speech Qualifications - Grade 8 Honours</h6>
+<div class="Column SecondColumn">
+<h4 class="SmallHeader">Qualifications</h4>
+<div class="SmallInfo">
+<h6 class="Employer">ISTQB Foundation Level</h6>
+<div class="Timeline">
+    <p class="RoleTitle">Internation Software Qualitfications Board</p>
+    <p class="RoleTime">2016</p>
+</div>
+<h6 class="Employer">NZ Speech Qualifications - Grade 8 Honours</h6>
+<div class="Timeline">
+    <p class="RoleTitle">New Zealand Speech Board</p>
+    <p class="RoleTime">2010</p>
+</div>
+</div>
+
+<h4 class="SmallHeader">Awards</h4>
+<div class="SmallInfo">
+<h6 class="Employer">Duke Of Edinburgh Award: Silver Level</h6>
+<div class="Timeline">
+    <p class="RoleTitle">His Royal Highness Prince Philip, Duke of Edinburgh</p>
+    <p class="RoleTime">2010</p>
+</div>
+<h6 class="Employer">Rotorua Young Achievers Award</h6>
+<div class="Timeline">
+    <p class="RoleTitle">Rotorua Lakes City Council</p>
+    <p class="RoleTime">2010</p>
+</div>
 <!--End of Column 2-->
+</div>
 </div>
 </section>
 
