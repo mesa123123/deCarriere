@@ -6,227 +6,7 @@
     <title>Peter Bowman Resume</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@100;300&display=swap" rel="stylesheet">
-    <style type="text/css">
-        @media screen,
-        print {
-            @page {
-                size: 20cm 28.7cm;
-                margin: 0mm 0mm 0mm 0mm;
-            }
-
-            :root {
-                --headerShade: #bbbbbb;
-                --baseFontSize: 80px;
-            }
-
-            * {
-                font-family: 'Ubuntu';
-                margin: 0%;
-                padding: 0%;
-            }
-
-            html,
-            body {
-                height: 100%;
-            }
-
-            header {
-                padding-bottom: 0%;
-                padding-top: 1%;
-            }
-
-            section {
-                display: flex;
-            }
-
-            ul {
-                list-style-type: none;
-            }
-
-            .Title {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding-bottom: 1%;
-            }
-
-            .Title>h1 {
-                font-size: calc(var(--baseFontSize) * 0.75);
-            }
-
-            .CommsLinks {
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                background-color: var(--headerShade);
-                padding-top: 1%;
-                padding-bottom: 1%;
-                border-style: solid;
-                border-color: transparent;
-                border-top-color: #000000;
-                border-bottom-color: #000000;
-                border-width: calc(var(--baseFontSize) / 3333);
-                font-weight: bold;
-            }
-
-            .CommsLinks>i.seperator {
-                flex-shrink: 20;
-                margin-left: 1%;
-                margin-right: 1%;
-            }
-
-            .CommsLinks>i.address {
-                flex-shrink: 20;
-                font-size: calc(var(--baseFontSize) / 5.5);
-            }
-
-            span.spacer {
-                width: 25%;
-            }
-
-            .MainInfo {
-                display: flex;
-                flex-direction: row;
-                margin-top: 1%;
-            }
-
-            .BottomSection {
-                display: flex;
-                flex-direction: row;
-                height: 20%;
-            }
-
-            .Column {
-                flex: 49.5%;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .FirstColumn {
-                margin-right: 0.2%;
-            }
-
-            .SecondColumn {
-                margin-left: 0.2%;
-            }
-
-            .BigHeader {
-                font-size: calc(var(--baseFontSize) / 3.5);
-                text-align: center;
-                margin-bottom: 2%;
-                padding-bottom: 3%;
-                padding-top: 3%;
-                background-color: var(--headerShade);
-            }
-
-            .SmallHeader {
-                font-size: calc(var(--baseFontSize) / 4);
-                text-align: center;
-                margin-bottom: 1%;
-                padding-bottom: 2%;
-                padding-top: 2%;
-                background-color: var(--headerShade);
-            }
-
-            .BigInfo,
-            .SmallInfo {
-                width: 90%;
-                margin-left: 1.5%;
-                margin-right: 8.5%;
-            }
-
-            .SmallInfo {
-                margin-bottom: 2%;
-            }
-
-            .Employer {
-                font-size: calc(var(--baseFontSize) / 4.75);
-            }
-
-            .Timeline {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                width: 100%;
-                margin-top: 0.5%;
-                margin-bottom: 0.5%;
-            }
-
-
-            .RoleTitle {
-                font-size: calc(var(--baseFontSize) / 6.25);
-                text-align: left;
-                font-style: italic;
-            }
-
-            .RoleTime {
-                text-align: right;
-                font-size: calc(var(--baseFontSize) / 6.25);
-                font-style: italic;
-            }
-
-            .JobBlurb {
-                font-size: calc(var(--baseFontSize) / 7.1);
-                font-weight: bold;
-                margin-bottom: 1%;
-            }
-
-            .DegreeBlurb {
-                display: flex;
-            }
-
-            .CourseSynopsis {
-                margin-top: 2%;
-                margin-bottom: 0%;
-                font-weight: bold;
-                font-size: calc(var(--baseFontSize)/7.15);
-                text-decoration: underline;
-                color: var(--headerShade);
-            }
-
-            .CourseName {
-                font-weight: bold;
-                font-size: calc(var(--baseFontSize) / 7.25);
-                font-style: italic;
-                margin-bottom: 1%;
-                margin-top: 2%;
-            }
-
-            .TechThingy>p {
-                font-size: calc(var(--baseFontSize) / 8);
-                font-weight: bold;
-                font-style: italic;
-                text-decoration: underline;
-                display: flex;
-            }
-
-            .TechUsed {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: flex-start;
-                align-content: flex-start;
-                margin-bottom: 1%;
-                margin-top: 1.5%;
-            }
-
-            .TechnologyBubble {
-                font-size: calc(var(--baseFontSize) / 8);
-                font-weight: bold;
-                display: inline;
-                white-space: nowrap;
-                text-align: justify;
-                border-style: solid;
-                border-width: thin;
-                border-color: #bbbbbb;
-                width: min-content;
-                padding: 0.5%;
-                margin: 0.5%;
-                border-radius: 3% / 20%;
-                background-color: #eeeeee;
-            }
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 
 <body>
@@ -252,219 +32,232 @@
 
     <!-- First Column -->
     <section class="MainInfo">
-        <div class="Column FirstColumn">
-            <h3 class="BigHeader">Experience</h3>
-            <div class="BigInfo">
-                <h5 class="Employer">Westpac</h5>
-                <div class="Timeline">
-                    <p class="RoleTitle">Senior Automation Test Engineer</p>
-                    <p class="RoleTime">Year of 2020 (Present Role)</p>
-                </div>
-                <p class="JobBlurb">
-                    During the year of 2020 I have been working as a Test Engineer (both as a contractor and permanent
-                    employee) for Westpac New Zealand. I have worked within the Data Tribe's Data Lineage squad
-                    supporting the EDC platform. Using shell scripts via ssh connections we have begun automating
-                    supporting
-                    operations that are not inbuilt into the EDC product itself. My primary duties as a Test Engineer,
-                    included automating the data completeness throughout the EDC data pipelines and its many
-                    connectors to Westpac's legacy business data systems. Working with the data department I have
-                    completed the first iterations of a library using spark and scala that would create masked data
-                    layers enabling test data
-                    that better reflects Westpacs production systems
-                </p>
-                <div class="TechThingy">
-                    <p>Technology Used in Role:</p>
-                    <ul class="TechUsed">
-                        <li class="TechnologyBubble">Scala</li>
-                        <li class="TechnologyBubble">Spark</li>
-                        <li class="TechnologyBubble">Linux</li>
-                        <li class="TechnologyBubble">Python</li>
-                        <li class="TechnologyBubble">Hadoop</li>
-                        <li class="TechnologyBubble">HDFS</li>
-                        <li class="TechnologyBubble">RHEL Servers</li>
-                        <li class="TechnologyBubble">Shell</li>
-                        <li class="TechnologyBubble">Zepplin</li>
-                        <li class="TechnologyBubble">Jupyter</li>
-                        <li class="TechnologyBubble">SSH</li>
-                        <li class="TechnologyBubble">Docker</li>
-                        <li class="TechnologyBubble">Jira</li>
-                        <li class="TechnologyBubble">Confluence</li>
-                    </ul>
-                </div>
+        <h3 class="BigHeader">Experience</h3>
+        <div class="BigInfo">
+            <h5 class="Employer">Westpac</h5>
+            <div class="Timeline">
+                <p class="RoleTitle">Plaform Engineer</p>
+                <p class="RoleTime">June 2021 (Present Role)</p>
             </div>
-
-            <div class="BigInfo">
-                <h5 class="Employer">Heineken</h5>
-                <div class="Timeline">
-                    <p class="RoleTitle">Data & Digital Specialist</p>
-                    <p class="RoleTime">Year of 2019</p>
-                </div>
-                <p class="JobBlurb">
-                    In 2019 Heineken brought a new focus to digital transformation, and within its New Zealand
-                    Headquarters my role was to lead this transformation within the production side of the business.
-                    This included leading a regional strategy that aligned with the global vision, and facilitated the
-                    training of
-                    production leadership for agile and design thinking. Day to day I lead projects that
-                    epxerimented with new ideas and new technologies in the
-                    contributing to Heinekens World Wide Data & Digital Specialists sharing best practices and
-                    learnings to better the business globally.
-                    When needed I built applications with Python, Javascript, SQLite, MySQL, and testing harnesses
-                    using the Pytest and Jest testing frameworks.
-                    Unfortunately my time with Heineken was cut short as I was given a great opportunity with Westpac
-                    that I could not refuse
-                </p>
-                <div class="TechThingy">
-                    <p>Technology Used in Role:</p>
-                    <ul class="TechUsed">
-                        <li class="TechnologyBubble">Python</li>
-                        <li class="TechnologyBubble">SQlite</li>
-                        <li class="TechnologyBubble">Javascript</li>
-                        <li class="TechnologyBubble">MS Project</li>
-                        <li class="TechnologyBubble">Anaconda</li>
-                        <li class="TechnologyBubble">Jest </li>
-                        <li class="TechnologyBubble">Power BI</li>
-                        <li class="TechnologyBubble">Pytest</li>
-                        <li class="TechnologyBubble">Selenium</li>
-                        <li class="TechnologyBubble">Azure DevOps</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="BigInfo">
-                <h5 class="Employer">Assurity</h5>
-                <div class="Timeline">
-                    <p class="RoleTitle">Test Analyst</p>
-                    <p class="RoleTime">Years 2016 - 2017</p>
-                </div>
-                <p class="JobBlurb">
-                    Assurity is a technology consultancy company that started in Wellington NZ. As consultants we
-                    supported the challenges that come with delivering enterprise technologies.
-                    During my time there I consulted for many government departments, learning the intrcacies of large
-                    scale software delivery. I used Selenium and Junit to create test suites as
-                    well as experimenting with Jenkins, Maven, and Gradle for building and creating CI/CD pipelines. I
-                    also worked with SQL to create and use test data, using tools
-                    such as Oracle DB and MySQL.
-                    My time with Assurity spurred my passion for working with tech and I decided that in order to really
-                    get the most out of the industry I needed to upskill my technical capabilities, thus I made the
-                    decision to return to study
-                </p>
-                <div class="TechThingy">
-                    <p>Technology Used in Role:</p>
-                    <ul class="TechUsed">
-                        <li class="TechnologyBubble">SQL</li>
-                        <li class="TechnologyBubble">Git</li>
-                        <li class="TechnologyBubble">Java</li>
-                        <li class="TechnologyBubble">Maven</li>
-                        <li class="TechnologyBubble">Gradle</li>
-                        <li class="TechnologyBubble">HP ALM</li>
-                        <li class="TechnologyBubble">W3C Driver (Selenium)</li>
-                        <li class="TechnologyBubble">MySQL</li>
-                        <li class="TechnologyBubble">Oracle DB</li>
-                        <li class="TechnologyBubble">Jenkins</li>
-                    </ul>
-                </div>
-            </div>
-            <!--End of FirstColumn-->
+            <p class="JobBlurb">
+                In June 2021 I was given the opportunity by Westpac to be a part of the forming of a new remote team designed
+                to support the implementation of Site Reliability Engineering and GitOps Practices for the Wellington
+                and Auckland data teams. As a team, our focus was to analyze the current state of the infrastructure
+                within the data for our stakeholders, define areas of weakness and technical debt, and create the Service Level
+                Indicators in order to ensure reliable systems for those we served.
+                As a Platform Engineer there was strong culture of "developing the craft" and engineers were encouraged to contribute to the building, documenting, and creation of tools and knowledge bases that allowed all members of the tribe to improve their skills both as engineers, professional. All the while conforming to GitOps standards that have been havily adopted through remote work. 
+            </p>
         </div>
-        <!--Second Column-->
-        <div class="Column SecondColumn">
-            <h3 class="BigHeader">Education</h3>
-            <div class="BigInfo">
-                <h5 class="Employer">Graduate Diploma Software Development</h5>
-                <div class="Timeline">
-                    <p class="RoleTitle">Toi Ohomai Institute of Technology</p>
-                    <p class="RoleTime">Year of 2018</p>
-                </div>
-                <div class="JobBlurb">
-                    <h6 class="CourseSynopsis">Course Synopsis</br></h6>
-                    <h6 class="CourseName">Introduction To Artificial Intelligence </br></h6>
-                    <p>This course required me to implement a vast range of techniques used in the current artificial
-                        intelligence techniques including genetic algorithms and analyzed different ways of contructing
-                        these solutions to create "good enough" solutions in an NP problem space </br></p>
-                    <h6 class="CourseName">Advanced UI Design </br></h6>
-                    <p>This paper tasked me to work with Microsoft's UWP and Azure Platforms to bulid mobile
-                        applications.
-                        This culminated in the creation of an MVP named "Get Setter" an application created to help
-                        people
-                        customize their training regimes </br></p>
-                    <h6 class="CourseName">Database Development </br></h6>
-                    <p>In this paper I worked to deepen my knowledge of relational database concepts, using MSSQL to
-                        work
-                        on projects that reinforce our skills</br> </p>
-                    <h6 class="CourseName">Final Project: Rugby Bay of Plenty</br></h6>
-                    <p>This was my final project on the course and worked with Rugby Bay of Plenty as a client in order
-                        to
-                        create an application that would track news, scores, and tournament updates throughout the
-                        length of
-                        the national tournament for rugby 7s. Our work included the entire SDLC first gathering
-                        reqiurements
-                        from Rugby BoPs Leaders, development, and working alongside Rugby BoP representatives to support
-                        the
-                        running of the application over the course of the weekends the tournamen ran. </br> </p>
-                </div>
-                <div class="TechThingy">
-                    <p>Technology Used in Role:</p>
-                    <ul class="TechUsed">
-                        <li class="TechnologyBubble">Python</li>
-                        <li class="TechnologyBubble">Javascript</li>
-                        <li class="TechnologyBubble">Vue</li>
-                        <li class="TechnologyBubble">Enterprise Architect</li>
-                        <li class="TechnologyBubble">MSSQL</li>
-                        <li class="TechnologyBubble">SQLite</li>
-                        <li class="TechnologyBubble">C#</li>
-                        <li class="TechnologyBubble">Azure</li>
-                        <li class="TechnologyBubble">Git</li>
-                        <li class="TechnologyBubble">UML</li>
+        <div class="BigInfo">
+            <div class="Timeline">
+                <p class="RoleTitle">Senior Automation Test Engineer</p>
+                <p class="RoleTime">January 2020 - June 2021</p>
+            </div>
+            <p class="JobBlurb">
+                During the year of 2020 I have been working as a Test Engineer (both as a contractor and permanent
+                employee) for Westpac New Zealand. I have worked within the Data Tribe's Data Lineage squad
+                supporting the EDC platform. Using shell scripts via ssh connections we have begun automating
+                supporting
+                operations that are not inbuilt into the EDC product itself. My primary duties as a Test Engineer,
+                included automating the data completeness throughout the EDC data pipelines and its many
+                connectors to Westpac's legacy business data systems. Working with the data department I have
+                completed the first iterations of a library using spark and scala that would create masked data
+                layers enabling test data
+                that better reflects Westpacs production systems
+            </p>
+            <div class="TechThingy">
+                <p>Technology Used in Roles:</p>
+                <ul class="TechUsed">
+                    <li class="TechnologyBubble">Scala</li>
+                    <li class="TechnologyBubble">Spark</li>
+                    <li class="TechnologyBubble">Linux</li>
+                    <li class="TechnologyBubble">Python</li>
+                    <li class="TechnologyBubble">Pytest</li>
+                    <li class="TechnologyBubble">Selenium</li>
+                    <li class="TechnologyBubble">Hadoop</li>
+                    <li class="TechnologyBubble">HDFS</li>
+                    <li class="TechnologyBubble">RHEL Servers</li>
+                    <li class="TechnologyBubble">Shell</li>
+                    <li class="TechnologyBubble">Zepplin</li>
+                    <li class="TechnologyBubble">Jupyter</li>
+                    <li class="TechnologyBubble">SSH</li>
+                    <li class="TechnologyBubble">Docker</li>
+                    <li class="TechnologyBubble">Jira</li>
+                    <li class="TechnologyBubble">Confluence</li>
+                    <li class="TechnologyBubble">Terraform</li>
+                    <li class="TechnologyBubble">Chef</li>
+                    <li class="TechnologyBubble">Vimscript</li>
+                    <li class="TechnologyBubble">Vagrant</li>
+                    <li class="TechnologyBubble">Virtual Box</li>
+                </ul>
+            </div>
+        </div>
+        <div class="BigInfo">
+            <h5 class="Employer">Heineken</h5>
+            <div class="Timeline">
+                <p class="RoleTitle">Data & Digital Specialist</p>
+                <p class="RoleTime">January 2019 - January 2020</p>
+            </div>
+            <p class="JobBlurb">
+                In 2019 Heineken brought a new focus to digital transformation, and within its New Zealand
+                Headquarters my role was to lead this transformation within the production side of the business.
+                This included leading a regional strategy that aligned with the global vision, and facilitated the
+                training of
+                production leadership for agile and design thinking. Day to day I lead projects that
+                epxerimented with new ideas and new technologies in the
+                contributing to Heinekens World Wide Data & Digital Specialists sharing best practices and
+                learnings to better the business globally.
+                When needed I built applications with Python, Javascript, SQLite, MySQL, and testing harnesses
+                using the Pytest and Jest testing frameworks.
+                Unfortunately my time with Heineken was cut short as I was given a great opportunity with Westpac
+                that I could not refuse
+            </p>
+            <div class="TechThingy">
+                <p>Technology Used in Role:</p>
+                <ul class="TechUsed">
+                    <li class="TechnologyBubble">Python</li>
+                    <li class="TechnologyBubble">SQlite</li>
+                    <li class="TechnologyBubble">Javascript</li>
+                    <li class="TechnologyBubble">MS Project</li>
+                    <li class="TechnologyBubble">Anaconda</li>
+                    <li class="TechnologyBubble">Jest </li>
+                    <li class="TechnologyBubble">Power BI</li>
+                    <li class="TechnologyBubble">Pytest</li>
+                    <li class="TechnologyBubble">Selenium</li>
+                    <li class="TechnologyBubble">Azure DevOps</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="BigInfo">
+            <h5 class="Employer">Assurity</h5>
+            <div class="Timeline">
+                <p class="RoleTitle">Test Analyst</p>
+                <p class="RoleTime">January 2016 - January 2018</p>
+            </div>
+            <p class="JobBlurb">
+                Assurity is a technology consultancy company that started in Wellington NZ. As consultants we
+                supported the challenges that come with delivering enterprise technologies.
+                During my time there I consulted for many government departments, learning the intrcacies of large
+                scale software delivery. I used Selenium and Junit to create test suites as
+                well as experimenting with Jenkins, Maven, and Gradle for building and creating CI/CD pipelines. I
+                also worked with SQL to create and use test data, using tools
+                such as Oracle DB and MySQL.
+                My time with Assurity spurred my passion for working with tech and I decided that in order to really
+                get the most out of the industry I needed to upskill my technical capabilities, thus I made the
+                decision to return to study
+            </p>
+            <div class="TechThingy">
+                <p>Technology Used in Role:</p>
+                <ul class="TechUsed">
+                    <li class="TechnologyBubble">SQL</li>
+                    <li class="TechnologyBubble">Git</li>
+                    <li class="TechnologyBubble">Java</li>
+                    <li class="TechnologyBubble">Maven</li>
+                    <li class="TechnologyBubble">Gradle</li>
+                    <li class="TechnologyBubble">HP ALM</li>
+                    <li class="TechnologyBubble">W3C Driver (Selenium)</li>
+                    <li class="TechnologyBubble">MySQL</li>
+                    <li class="TechnologyBubble">Oracle DB</li>
+                    <li class="TechnologyBubble">Jenkins</li>
+                </ul>
+            </div>
+        </div>
+        <h3 class="BigHeader">Education</h3>
+        <div class="BigInfo">
+            <h5 class="Employer">Graduate Diploma Software Development</h5>
+            <div class="Timeline">
+                <p class="RoleTitle">Toi Ohomai Institute of Technology</p>
+                <p class="RoleTime">Feburary 2018 - December 2018</p>
+            </div>
+            <div class="JobBlurb">
+                <h6 class="CourseSynopsis">Course Synopsis</br></h6>
+                <h6 class="CourseName">Introduction To Artificial Intelligence </br></h6>
+                <p>This course required me to implement a vast range of techniques used in the current artificial
+                    intelligence techniques including genetic algorithms and analyzed different ways of contructing
+                    these solutions to create "good enough" solutions in an NP problem space </br></p>
+                <h6 class="CourseName">Advanced UI Design </br></h6>
+                <p>This paper tasked me to work with Microsoft's UWP and Azure Platforms to bulid mobile
+                    applications.
+                    This culminated in the creation of an MVP named "Get Setter" an application created to help
+                    people
+                    customize their training regimes </br></p>
+                <h6 class="CourseName">Database Development </br></h6>
+                <p>In this paper I worked to deepen my knowledge of relational database concepts, using MSSQL to
+                    work
+                    on projects that reinforce our skills</br> </p>
+                <h6 class="CourseName">Final Project: Rugby Bay of Plenty</br></h6>
+                <p>This was my final project on the course and worked with Rugby Bay of Plenty as a client in order
+                    to
+                    create an application that would track news, scores, and tournament updates throughout the
+                    length of
+                    the national tournament for rugby 7s. Our work included the entire SDLC first gathering
+                    reqiurements
+                    from Rugby BoPs Leaders, development, and working alongside Rugby BoP representatives to support
+                    the
+                    running of the application over the course of the weekends the tournamen ran. </br> </p>
+            </div>
+            <div class="TechThingy">
+                <p>Technology Used in Role:</p>
+                <ul class="TechUsed">
+                    <li class="TechnologyBubble">Python</li>
+                    <li class="TechnologyBubble">Javascript</li>
+                    <li class="TechnologyBubble">Vue</li>
+                    <li class="TechnologyBubble">Enterprise Architect</li>
+                    <li class="TechnologyBubble">MSSQL</li>
+                    <li class="TechnologyBubble">SQLite</li>
+                    <li class="TechnologyBubble">C#</li>
+                    <li class="TechnologyBubble">Azure</li>
+                    <li class="TechnologyBubble">Git</li>
+                    <li class="TechnologyBubble">UML</li>
+                </ul>
+            </div>
+        </div>
+        <div class="BigInfo">
+            <h5 class="Employer">Bachelor of Arts <i>Maj. Economics</i></h5>
+            <div class="Timeline">
+                <p class="RoleTitle">Victoria University of Wellington</p>
+                <p class="RoleTime">Years 2012 to 2015</p>
+            </div>
+            <div class="JobBlurb DegreeBlurb">
+                <div class="FirstColumn Column">
+                    <h6 class="CourseName">Minors</h6>
+                    <ul>
+                        <li>English Literature</li>
                     </ul>
+                    <h6 class="CourseName">Co-Curricular</h6>
+                    <ul>
+                        <li>Victoria University Commerce Executive</li>
+                        <li>Victoria University Rowing Club</li>
+                    </ul>
+                    <!--End of Degree First Column-->
                 </div>
+                <div class="SecondColumn Column">
+                    <h6 class="CourseName">Electives</h6>
+                    <ul>
+                        <li>Jazz Performance</li>
+                        <li>Mathematics</li>
+                        <li>Computer Science</li>
+                        <li>Philosophy</li>
+                    </ul>
+                    <!--End of Degree Second Column-->
+                </div>
+                <!--End of DegreeBlurb-->
             </div>
-            <div class="BigInfo">
-                <h5 class="Employer">Bachelor of Arts <i>Maj. Economics</i></h5>
-                <div class="Timeline">
-                    <p class="RoleTitle">Victoria University of Wellington</p>
-                    <p class="RoleTime">Years 2012 to 2015</p>
-                </div>
-                <div class="JobBlurb DegreeBlurb">
-                    <div class="FirstColumn Column">
-                        <h6 class="CourseName">Minors</h6>
-                        <ul>
-                            <li>English Literature</li>
-                        </ul>
-                        <h6 class="CourseName">Co-Curricular</h6>
-                        <ul>
-                            <li>Victoria University Commerce Executive</li>
-                            <li>Victoria University Rowing Club</li>
-                        </ul>
-                        <!--End of Degree First Column-->
-                    </div>
-                    <div class="SecondColumn Column">
-                        <h6 class="CourseName">Electives</h6>
-                        <ul>
-                            <li>Jazz Performance</li>
-                            <li>Mathematics</li>
-                            <li>Computer Science</li>
-                            <li>Philosophy</li>
-                        </ul>
-                        <!--End of Degree Second Column-->
-                    </div>
-                    <!--End of DegreeBlurb-->
-                </div>
-                <!--End of BigInfo - Degree-->
+            <!--End of BigInfo - Degree-->
+        </div>
+        <h4 class="BigHeader">Qualifications</h4>
+        <div class="SmallInfo">
+            <h6 class="Employer">ISTQB Foundation Level</h6>
+            <div class="Timeline">
+                <p class="RoleTitle">Internation Software Qualitfications Board</p>
+                <p class="RoleTime">Received 2016</p>
             </div>
-            <h4 class="SmallHeader">Qualifications</h4>
-            <div class="SmallInfo">
-                <h6 class="Employer">ISTQB Foundation Level</h6>
-                <div class="Timeline">
-                    <p class="RoleTitle">Internation Software Qualitfications Board</p>
-                    <p class="RoleTime">Received 2016</p>
-                </div>
-                <h6 class="Employer">NZ Speech Qualifications - Grade 8 Honours</h6>
-                <div class="Timeline">
-                    <p class="RoleTitle">New Zealand Speech Board</p>
-                    <p class="RoleTime">Received 2010</p>
-                </div>
+            <h6 class="Employer">NZ Speech Qualifications - Grade 8 Honours</h6>
+            <div class="Timeline">
+                <p class="RoleTitle">New Zealand Speech Board</p>
+                <p class="RoleTime">Received 2010</p>
             </div>
-            <!--End of Second Column-->
         </div>
         <!--End of MainInfo-->
     </section>
