@@ -1,10 +1,17 @@
+@media print {
+    button { 
+       opacity: 0%; 
+    }
+}
+
+
 @media screen,
 print {
     @page {
         size: 20cm 28.7cm;
         margin: 0mm 0mm 0mm 0mm;
     }
-
+    
     :root {
         --headerShade: #bbbbbb;
         --baseFontSize: 80px;
@@ -14,8 +21,9 @@ print {
         font-family: 'Ubuntu';
         margin: 0%;
         padding: 0%;
+        float: none;
     }
-
+    
     html,
     body {
         height: 100%;
@@ -92,7 +100,7 @@ print {
         align-items: center;
         justify-content: center;
     }
-
+   
     .FirstColumn {
         margin-right: 0.2%;
     }
@@ -131,6 +139,11 @@ print {
     .Employer {
         font-size: calc(var(--baseFontSize) / 4.75);
         text-align: center;
+    }
+
+    .SmallEmployer {
+        font-size: calc(var(--baseFontSize) / 4.75);
+        text-align: start;
     }
 
     .Timeline {
