@@ -138,7 +138,7 @@ print {
 
     .Employer {
         font-size: calc(var(--baseFontSize) / 4.75);
-        text-align: center;
+        text-align: left;
     }
 
     .SmallEmployer {
@@ -149,7 +149,7 @@ print {
     .Timeline {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: start;
         width: 100%;
         margin-top: 0.5%;
         margin-bottom: 0.5%;
@@ -165,6 +165,7 @@ print {
     .RoleTime {
         text-align: right;
         font-size: calc(var(--baseFontSize) / 6.25);
+        margin-left: 5%;
         font-style: italic;
     }
 
