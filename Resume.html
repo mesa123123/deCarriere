@@ -13,6 +13,7 @@
 <body>
 
     <header>
+        <button onclick="window.print();return false;" />Print</button>
         <div class="Title">
             <h1>Peter Bowman</h1>
         </div>
@@ -32,6 +33,7 @@
     </header>
 
     <!-- First Column -->
+    <div class="page">
     <section class="MainInfo">
         <h3 class="BigHeader">Experience</h3>
         <div class="BigInfo">
@@ -41,7 +43,7 @@
                 <p class="RoleTime">November 2022 - April 2023</p>
         </div>
             <p class="JobBlurb">
-                PikPok is a leading mobile game development studio, I contributed to a the analytics team as a Data Engineer, I leveraged key technologies such as Python (using libraries like pandas), Jupyter, Linux, PostgresQL, AWS (Redshift), to handle ETL business use cases for the wider business teams.  My role required strong attention to detail, effective communication, and problem-solving abilities. This enabled data-driven insights to assist in strategic decision-making for many teams across the business.
+                PikPok is a leading mobile game development studio, I contributed to a the analytics team as a Python Engineer, I leveraged key technologies such as Python (using libraries like pandas), Jupyter, Linux, PostgresQL, AWS (Redshift), to handle ETL business use cases for the wider business teams.  My role required strong attention to detail, effective communication, and problem-solving abilities. This enabled data-driven insights to assist in strategic decision-making for many teams across the business.
             </p>
             <div class="TechThingy">
                 <p>Technology Used in Roles:</p>
@@ -138,7 +140,7 @@ In 2020, I worked as a Test Engineer for Westpac New Zealand, both as a contract
                 that I could not refuse
             </p>
             <div class="TechThingy">
-                <p>Technology Used in Role:</p>
+                <p>Technology Used in Roles:</p>
                 <ul class="TechUsed">
                     <li class="TechnologyBubble">Python</li>
                     <li class="TechnologyBubble">SQlite</li>
@@ -172,7 +174,7 @@ In 2020, I worked as a Test Engineer for Westpac New Zealand, both as a contract
                 decision to return to study
             </p>
             <div class="TechThingy">
-                <p>Technology Used in Role:</p>
+                <p>Technology Used in Roles:</p>
                 <ul class="TechUsed">
                     <li class="TechnologyBubble">SQL</li>
                     <li class="TechnologyBubble">Git</li>
@@ -187,6 +189,9 @@ In 2020, I worked as a Test Engineer for Westpac New Zealand, both as a contract
                 </ul>
             </div>
         </div>
+    </section>
+    </div>
+    <div class="page secondPlusPage">
         <div id="Other_Experience">
             <h4 class="BigHeader">Other Experience</h4>
             <div class="BottomSection">
@@ -225,8 +230,6 @@ In 2020, I worked as a Test Engineer for Westpac New Zealand, both as a contract
             </div>
         </div>
         <!--End of Page 1-->
-        </div>
-    </section>
         <section class="MainInfo">
             <h3 class="BigHeader">Education</h3>
             <div class="BigInfo">
@@ -314,9 +317,9 @@ In 2020, I worked as a Test Engineer for Westpac New Zealand, both as a contract
         </section>
 
         <!--Small Info-->
-        <section class="BottomSection">
+        <section class="MainInfo">
             <!--Start of Column 2-->
-            <div class="Column SecondColumn">
+            <div class="Column">
                 <h4 class="BigHeader">Awards</h4>
                 <div class="SmallInfo">
                     <h6 class="SmallEmployer">Duke Of Edinburgh Award: Silver Level</h6>
@@ -332,7 +335,7 @@ In 2020, I worked as a Test Engineer for Westpac New Zealand, both as a contract
                     <!--End of Column 2-->
                 </div>
         </section>
-        <button onclick="window.print();return false;" />Print</button>
+        </div>
 </body>
 
 </html>

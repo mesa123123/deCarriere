@@ -230,4 +230,13 @@ print {
         border-radius: 3% / 20%;
         background-color: #eeeeee;
     }
+    
+    div.page {
+        page-break-after: always; 
+    }
+
+    div.secondPlusPage {
+        padding-top: calc(var(--baseFontSize)/4);
+    }
+
 }
