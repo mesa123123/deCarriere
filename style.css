@@ -1,242 +1,272 @@
 @media print {
-    button { 
-       opacity: 0%; 
-    }
+  button {
+    opacity: 0%;
+  }
 }
 
+@media screen, print {
+  @page {
+    size: 20cm 28.7cm;
+    margin: 0mm 0mm 0mm 0mm;
+  }
 
-@media screen,
-print {
-    @page {
-        size: 20cm 28.7cm;
-        margin: 0mm 0mm 0mm 0mm;
-    }
-    
-    :root {
-        --headerShade: #bbbbbb;
-        --baseFontSize: 80px;
-    }
+  :root {
+    --headerShadeR: 187;
+    --headerShadeG: 187;
+    --headerShadeB: 187;
+    --baseFontSize: 80px;
+  }
 
-    * {
-        font-family: 'Ubuntu';
-        margin: 0%;
-        padding: 0%;
-        float: none;
-    }
-    
-    html,
-    body {
-        height: 100%;
-    }
+  * {
+    font-family: "Ubuntu";
+    margin: 0%;
+    padding: 0%;
+    float: none;
+  }
 
-    header {
-        padding-bottom: 0%;
-        padding-top: 1%;
-    }
+  html,
+  body {
+    height: 100%;
+  }
 
-    section {
-        display: flex;
-    }
+  header {
+    padding-bottom: 0%;
+    padding-top: 1%;
+  }
 
-    ul {
-        list-style-type: none;
-    }
+  section {
+    display: flex;
+  }
 
-    .Title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 1%;
-    }
+  ul {
+    list-style-type: none;
+  }
 
-    .Title>h1 {
-        font-size: calc(var(--baseFontSize) * 0.65);
-    }
+  .Title {
+    height: calc(var(--baseFontSize) * 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1%;
+  }
 
-    .CommsLinks {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        background-color: var(--headerShade);
-        padding-top: 1%;
-        padding-bottom: 1%;
-        border-style: solid;
-        border-color: transparent;
-        border-top-color: #000000;
-        border-bottom-color: #000000;
-        border-width: calc(var(--baseFontSize) / 3333);
-        font-weight: bold;
-    }
+  .Title > h1 {
+    font-size: calc(var(--baseFontSize) * 0.65);
+  }
 
-    .CommsLinks>i.seperator {
-        flex-shrink: 20;
-        margin-left: 1%;
-        margin-right: 1%;
-    }
+  .CommsLinks {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(
+      var(--headerShadeR),
+      var(--headerShadeG),
+      var(--headerShadeB)
+    );
+    padding-top: 0.75%;
+    padding-bottom: 0.5%;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: #000000;
+    border-width: calc(var(--baseFontSize) / 3333);
+    font-weight: bold;
+  }
 
-    .CommsLinks>i.address {
-        flex-shrink: 20;
-        font-size: calc(var(--baseFontSize) / 5.5);
-    }
+  .CommsLinks > i.seperator {
+    flex-shrink: 20;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
 
-    span.spacer {
-        width: 25%;
-    }
+  .CommsLinks > i.address {
+    flex-shrink: 20;
+    font-size: calc(var(--baseFontSize) / 5.5);
+  }
 
-    .MainInfo {
-        display: flex;
-        flex-direction: column;
-        margin-top: 1%;
-    }
+  .Nationalities {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(
+    calc(var(--headerShadeR)),
+    calc(var(--headerShadeG)),
+    calc(var(--headerShadeB))
+    );
+    border-style: solid;
+    border-color: transparent;
+    border-bottom-color: #000000;
+    border-width: calc(var(--baseFontSize) / 9999);
+    font-weight: bold;
+    padding-top: 0.5%;
+   padding-bottom: 0.75%;
+  }
 
-    .BottomSection {
-        margin-left: 1%;
-        display: flex;
-        flex-direction: row;
-        height: 20%;
-    }
+  .Nationalities > i.information {
+    font-size: calc(var(--baseFontSize) / 7);
+  }
 
-    .Column {
-        flex: 49.5%;
-        align-items: center;
-        justify-content: center;
-    }
-   
-    .FirstColumn {
-        margin-right: 0.2%;
-    }
+  .Nationalities > i.separator {
+   flex-shrink: 20;
+   margin-left: 1%;
+   margin-right: 1%;
+  }
 
-    .SecondColumn {
-        margin-left: 0.2%;
-    }
+  span.spacer {
+    width: 25%;
+  }
 
-    .BigHeader {
-        font-size: calc(var(--baseFontSize) / 3.5);
-        text-align: start;
-        padding-left: 1%;
-        margin-bottom: 2%;
-    }
+  .MainInfo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1%;
+  }
 
-    .SmallHeader {
-        font-size: calc(var(--baseFontSize) / 4);
-        text-align: center;
-        margin-bottom: 1%;
-        padding-bottom: 2%;
-        padding-top: 2%;
-        background-color: var(--headerShade);
-    }
+  .BottomSection {
+    margin-left: 1%;
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+  }
 
-    .BigInfo,
-    .SmallInfo {
-        width: 90%;
-        margin-left: 1.5%;
-        margin-right: 8.5%;
-    }
+  .Column {
+    flex: 49.5%;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .SmallInfo {
-        margin-bottom: 2%;
-    }
+  .FirstColumn {
+    margin-right: 0.2%;
+  }
 
-    .Employer {
-        font-size: calc(var(--baseFontSize) / 4.75);
-        text-align: left;
-    }
+  .SecondColumn {
+    margin-left: 0.2%;
+  }
 
-    .SmallEmployer {
-        font-size: calc(var(--baseFontSize) / 4.75);
-        text-align: start;
-    }
+  .BigHeader {
+    font-size: calc(var(--baseFontSize) / 3.5);
+    text-align: start;
+    padding-left: 1%;
+    margin-bottom: 2%;
+  }
 
-    .Timeline {
-        display: flex;
-        flex-direction: row;
-        justify-content: start;
-        width: 100%;
-        margin-top: 0.5%;
-        margin-bottom: 0.5%;
-    }
+  .SmallHeader {
+    font-size: calc(var(--baseFontSize) / 4);
+    text-align: center;
+    margin-bottom: 1%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    background-color: var(--headerShade);
+  }
 
+  .BigInfo,
+  .SmallInfo {
+    width: 90%;
+    margin-left: 1.5%;
+    margin-right: 8.5%;
+  }
 
-    .RoleTitle {
-        font-size: calc(var(--baseFontSize) / 6.25);
-        text-align: left;
-        font-style: italic;
-    }
+  .SmallInfo {
+    margin-bottom: 2%;
+  }
 
-    .RoleTime {
-        text-align: right;
-        font-size: calc(var(--baseFontSize) / 6.25);
-        margin-left: 5%;
-        font-style: italic;
-    }
+  .Employer {
+    font-size: calc(var(--baseFontSize) / 4.75);
+    text-align: left;
+  }
 
-    .JobBlurb {
-        font-size: calc(var(--baseFontSize) / 7.1);
-        font-weight: bold;
-        margin-bottom: 1%;
-    }
+  .SmallEmployer {
+    font-size: calc(var(--baseFontSize) / 4.75);
+    text-align: start;
+  }
 
-    .DegreeBlurb {
-        display: flex;
-    }
+  .Timeline {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    width: 100%;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+  }
 
-    .CourseSynopsis {
-        margin-top: 2%;
-        margin-bottom: 0%;
-        font-weight: bold;
-        font-size: calc(var(--baseFontSize)/7.15);
-        text-decoration: underline;
-        color: var(--headerShade);
-    }
+  .RoleTitle {
+    font-size: calc(var(--baseFontSize) / 6.25);
+    text-align: left;
+    font-style: italic;
+  }
 
-    .CourseName {
-        font-weight: bold;
-        font-size: calc(var(--baseFontSize) / 7.25);
-        font-style: italic;
-        margin-bottom: 1%;
-        margin-top: 2%;
-    }
+  .RoleTime {
+    text-align: right;
+    font-size: calc(var(--baseFontSize) / 6.25);
+    margin-left: 5%;
+    font-style: italic;
+  }
 
-    .TechThingy>p {
-        font-size: calc(var(--baseFontSize) / 8);
-        font-weight: bold;
-        font-style: italic;
-        text-decoration: underline;
-        display: flex;
-    }
+  .JobBlurb {
+    font-size: calc(var(--baseFontSize) / 7.1);
+    font-weight: bold;
+    margin-bottom: 1%;
+  }
 
-    .TechUsed {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        align-content: flex-start;
-        margin-bottom: 1%;
-        margin-top: 1.5%;
-    }
+  .DegreeBlurb {
+    display: flex;
+  }
 
-    .TechnologyBubble {
-        font-size: calc(var(--baseFontSize) / 8);
-        font-weight: bold;
-        display: inline;
-        white-space: nowrap;
-        text-align: justify;
-        border-style: solid;
-        border-width: thin;
-        border-color: #bbbbbb;
-        width: min-content;
-        padding: 0.5%;
-        margin: 0.5%;
-        border-radius: 3% / 20%;
-        background-color: #eeeeee;
-    }
-    
-    div.page {
-        page-break-after: always; 
-    }
+  .CourseSynopsis {
+    margin-top: 2%;
+    margin-bottom: 0%;
+    font-weight: bold;
+    font-size: calc(var(--baseFontSize) / 7.15);
+    text-decoration: underline;
+    color: var(--headerShade);
+  }
 
-    div.secondPlusPage {
-        padding-top: calc(var(--baseFontSize)/4);
-    }
+  .CourseName {
+    font-weight: bold;
+    font-size: calc(var(--baseFontSize) / 7.25);
+    font-style: italic;
+    margin-bottom: 1%;
+    margin-top: 2%;
+  }
 
+  .TechThingy > p {
+    font-size: calc(var(--baseFontSize) / 8);
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+    display: flex;
+  }
+
+  .TechUsed {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    margin-bottom: 1%;
+    margin-top: 1.5%;
+  }
+
+  .TechnologyBubble {
+    font-size: calc(var(--baseFontSize) / 8);
+    font-weight: bold;
+    display: inline;
+    white-space: nowrap;
+    text-align: justify;
+    border-style: solid;
+    border-width: thin;
+    border-color: #bbbbbb;
+    width: min-content;
+    padding: 0.5%;
+    margin: 0.5%;
+    border-radius: 3% / 20%;
+    background-color: #eeeeee;
+  }
+
+  div.page {
+    page-break-after: always;
+  }
+
+  div.secondPlusPage {
+    padding-top: calc(var(--baseFontSize) / 4);
+  }
 }
