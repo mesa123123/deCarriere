@@ -1,0 +1,426 @@
+    %-----------------------------------------------------------------------------------------------------------------------------------------------%
+    %	The MIT License (MIT)
+    %
+    %	Copyright (c) 2015 Jan Küster
+    %
+    %	Permission is hereby granted, free of charge, to any person obtaining a copy
+    %	of this software and associated documentation files (the "Software"), to deal
+    %	in the Software without restriction, including without limitation the rights
+    %	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    %	copies of the Software, and to permit persons to whom the Software is
+    %	furnished to do so, subject to the following conditions:
+    %	
+    %	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    %	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    %	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    %	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    %	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    %	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    %	THE SOFTWARE.
+    %	
+    %
+    %-----------------------------------------------------------------------------------------------------------------------------------------------%
+    
+    
+    %============================================================================%
+    %
+    %	DOCUMENT DEFINITION
+    %
+    %============================================================================%
+    
+    %we use article class because we want to fully customize the page and dont use a cv template
+    \documentclass[10pt,A4]{article}	
+    
+    
+    %----------------------------------------------------------------------------------------
+    %	ENCODING
+    %----------------------------------------------------------------------------------------
+    
+    %we use utf8 since we want to build from any machine
+    \usepackage[utf8]{inputenc}		
+    
+    %----------------------------------------------------------------------------------------
+    %	LOGIC
+    %----------------------------------------------------------------------------------------
+    
+    % provides \isempty test
+    \usepackage{xifthen}
+    
+    %----------------------------------------------------------------------------------------
+    %	FONT
+    %----------------------------------------------------------------------------------------
+    
+    % some tex-live fonts - choose your own
+    
+    %\usepackage[defaultsans]{droidsans}
+    %\usepackage[default]{comfortaa}
+    %\usepackage{cmbright}
+    %\usepackage[default]{raleway}
+    %\usepackage{fetamont}
+    %\usepackage[default]{gillius}
+    %\usepackage[light,math]{iwona}
+    \usepackage[light]{roboto}
+    
+    % set font default
+    \renewcommand*\familydefault{\sfdefault} 	
+    \usepackage[T1]{fontenc}
+    
+    % more font size definitions
+    \usepackage{moresize}		
+    \usepackage{fontawesome5}
+    
+    %----------------------------------------------------------------------------------------
+    %	PAGE LAYOUT  DEFINITIONS
+    %----------------------------------------------------------------------------------------
+    
+    %debug page outer frames
+    %\usepackage{showframe}			
+    
+    
+    %define page styles using geometry
+    \usepackage[a4paper]{geometry}		
+    
+    % for example, change the margins to 2 inches all round
+    \geometry{top=2cm, bottom=-.6cm, left=1.5cm, right=1.5cm} 	
+
+    %use customized header
+    \usepackage{fancyhdr}				
+    \pagestyle{fancy}
+    
+    %less space between header and content
+    \setlength{\headheight}{-5pt}		
+    
+    
+    %customize entries left, center and right
+    %\lhead{}
+    %\chead{}
+    %\rhead{}
+    
+    
+    %indentation is zero
+    \setlength{\parindent}{0mm}
+    
+    %----------------------------------------------------------------------------------------
+    %	TABLE /ARRAY DEFINITIONS
+    %---------------------------------------------------------------------------------------- 
+    
+    %for layouting tables
+    \usepackage{multicol}			
+    \usepackage{multirow}
+    
+    %extended aligning of tabular cells
+    \usepackage{array}
+    
+    \newcolumntype{x}[1]{%
+    >{\raggedleft\hspace{0pt}}p{#1}}%
+    
+    
+    %----------------------------------------------------------------------------------------
+    %	GRAPHICS DEFINITIONS
+    %---------------------------------------------------------------------------------------- 
+    
+    %for header image
+    \usepackage{graphicx}
+    
+    %for floating figures
+    \usepackage{wrapfig}
+    \usepackage{float}
+    %\floatstyle{boxed} 
+    %\restylefloat{figure}
+    
+    %for drawing graphics		
+    \usepackage{tikz}				
+    \usetikzlibrary{shapes, backgrounds, mindmap, trees, positioning}
+    
+    
+    %----------------------------------------------------------------------------------------
+    %	Color DEFINITIONS
+    %---------------------------------------------------------------------------------------- 
+    
+    \usepackage{color}
+    
+    %accent color
+    \definecolor{sectcol}{RGB}{75,225,175}
+    
+    %dark background color
+    \definecolor{bgcol}{RGB}{110,110,110}
+    
+    %light background / accent color
+    \definecolor{softcol}{RGB}{175,175,175}
+
+    \definecolor{ubersoftcol}{RGB}{225,225,225}
+    
+    %============================================================================%
+    %
+    %
+    %	DEFINITIONS
+    %
+    %
+    %============================================================================%
+    
+    %----------------------------------------------------------------------------------------
+    % 	HEADER
+    %----------------------------------------------------------------------------------------
+    
+    % remove top header line
+    \renewcommand{\headrulewidth}{0pt} 
+    
+    %remove botttom header line
+    \renewcommand{\footrulewidth}{0pt}	  	
+    
+    %remove pagenum
+    \renewcommand{\thepage}{}	
+    
+    %remove section num		
+    \renewcommand{\thesection}{}			
+    
+    %----------------------------------------------------------------------------------------
+    % 	ARROW GRAPHICS in Tikz
+    %----------------------------------------------------------------------------------------
+    
+    % a six pointed arrow poiting to the left
+    \newcommand{\tzlarrow}{(0,0) -- (0.2,0) -- (0.3,0.2) -- (0.2,0.4) -- (0,0.4) -- (0.1,0.2) -- cycle;}	
+    
+    % include the left arrow into a tikz picture
+    % param1: fill color
+    %
+    \newcommand{\larrow}[1]
+    {\begin{tikzpicture}[scale=0.58]
+    	 \filldraw[fill=#1!100,draw=#1!100!black]  \tzlarrow
+     \end{tikzpicture}
+    }
+    
+    % a six pointed arrow poiting to the right
+    \newcommand{\tzrarrow}{ (0,0.2) -- (0.1,0) -- (0.3,0) -- (0.2,0.2) -- (0.3,0.4) -- (0.1,0.4) -- cycle;}
+    
+    % include the right arrow into a tikz picture
+    % param1: fill color
+    %
+    \newcommand{\rarrow}
+    {\begin{tikzpicture}[scale=0.7]
+    	\filldraw[fill=sectcol!100,draw=sectcol!100!black] \tzrarrow
+     \end{tikzpicture}
+    }
+%
+% Things you will do
+% Be part of the team responsible for the near-real-time transfer of data from source systems to the Data Lake, between systems within Typeform, and to/from our external tools.
+% Collaborate in designing, engineering, developing, and delivering an information technology infrastructure supporting the entire Data Team.
+% Help develop a scalable data architecture with a team of data engineers who populate and maintain Typeform’s Data Lake.
+% Lead and support Typeform’s engineering efforts in designing, developing, and rolling out Data systems and services.
+% Partner and learn with system architects, functional managers, and program managers to deliver mission-critical data to wherever it is needed
+% Help in building infrastructure and services that have an immediate impact on our business and customers.
+% Mentor and upskill junior team members.
+ 
+% What you already bring to the table:
+% 4+ years of experience in the Data Engineering field, with a proven track record of technical ability
+% Previous experience in using an event-driven architecture with Kafka
+% Excellent stakeholder management and communication skills 
+% Experience with Scala, Python, and SQL for data pipelines
+% Experience with modern cloud data warehouses (like AWS Redshift, GCP BigQuery, Azure Synapse or Snowflake)
+% Strong problem-solving skills 
+% Strong mentorship skills
+
+% Experience with Apache Spark (in both batch and streaming)
+% Experience with a job orchestrator (Airflow, Google Cloud Composer, Flyte, Prefect, Dagster)
+% Experience with dbt
+%
+%
+
+
+    
+    %----------------------------------------------------------------------------------------
+    %	custom sections
+    %----------------------------------------------------------------------------------------
+    
+    % create a coloured box with arrow and title as cv section headline
+    % param 1: section title
+    %
+    
+    %create a coloured arrow with title as cv meta section section
+    % param 1: meta section title
+    %
+    \newcommand{\metasection}[2]
+    {
+    %\begin{tabular*}{1\textwidth}{r r}
+    \footnotesize{#2} \hspace*{\fill} \footnotesize{#1}\\[1pt]
+    %\end{tabular*}
+    }
+    
+    %----------------------------------------------------------------------------------------
+    %	 CV EVENT
+    %----------------------------------------------------------------------------------------
+    
+    % creates a stretched box as cv entry headline followed by some paragraphs about 
+    % the work you did
+    % param 1:	event time i.e. 2014 or 2011-2014 etc.
+    % param 2:	event name (what did you do?)
+    % param 3:	institution (where did you work / study)
+    % param 4:	list of paragraphs
+    %
+    \newcommand{\cvevent} [3]
+    {
+    
+    \begin{tabular*}{1\textwidth}{p{13.6cm}  x{3.9cm}}
+    	\text{#2} \textcolor{sectcol}{#1} &   \vspace{2.5pt}\textcolor{sectcol}{#1}
+    \end{tabular*}
+    
+    \vspace{-8pt}
+    \textcolor{ubersoftcol}{\hrule}
+    	
+    \vspace{3pt}
+    }
+
+    % A modification of this for my degree, putting it into two columns for the sake of space
+    \newcommand{\cveventdualcolumn}[4]
+    {
+    
+    \begin{tabular*}{1\textwidth}{p{13.6cm}  x{3.9cm}}
+    	\mbox{\mystrut \hspace{87pt}\textit{#1}}\\
+    \end{tabular*}
+    
+    \vspace{-8pt}
+    \textcolor{softcol}{\hrule}
+    \vspace{6pt}
+    
+    	\foreach \desc in {#4}{
+    		$\cdot$ \desc\\[3pt]
+    	}
+    	
+    \vspace{3pt}
+    }
+
+
+    
+    % creates a stretched box as 
+    \newcommand{\cveventmeta}[2]
+    {
+    	\mbox{\mystrut \hspace{87pt}\textit{#1}}\\
+    	#2
+    }
+    
+    %----------------------------------------------------------------------------------------
+    % CUSTOM STRUT FOR EMPTY BOXES
+    %----------------------------------------- -----------------------------------------------
+    \newcommand{\mystrut}{\rule[-.3\baselineskip]{0pt}{\baselineskip}}
+    
+    
+    
+    
+    %============================================================================%
+    %
+    %
+    %
+    %	DOCUMENT CONTENT
+    %
+    %
+    %
+    %============================================================================%
+    \begin{document}
+    
+    
+    %use our custom fancy header definitions
+    \pagestyle{fancy}	
+    
+    
+    
+    
+    
+    %----------------------------------------------------------------------------------------
+    %	HEADER IMAGE
+    %----------------------------------------------------------------------------------------
+    
+    %\begin{figure}[H]
+    %\begin{flushright}
+    %	\includegraphics[trim= 320 130 460 210,clip,width=0.2\linewidth]{myfoto.jpg}	%trimming relative to image size!
+    %\end{flushright}
+    %\end{figure}
+    
+    
+    %---------------------------------------------------------------------------------------
+    %	TITLE HEADLINE
+    %----------------------------------------------------------------------------------------
+    \vspace{-8pt}
+    \begin{left}
+    	\Huge \textsc{Peter Bowman}
+    \end{left}
+    
+    
+    
+    \vspace{12pt}
+    
+    
+    %---------------------------------------------------------------------------------------
+    %	META SECTION
+    %----------------------------------------------------------------------------------------
+    \metasection{}{\faIcon{location-arrow} Brighton, United Kingdom, BN2 9JA}
+    \metasection{}{\faIcon{at} bowmanpetedev@gmail.com}
+    \metasection{}{\faIcon{phone-square-alt} +447411123680}
+    \metasection{}{\faIcon{linkedin} bowmanpete123}
+    \normalsize
+    
+    \vspace{32pt}
+    %---------------------------------------------------------------------------------------
+    %	SUMMARAY (optional)
+    %----------------------------------------------------------------------------------------
+    %\vspace{-6pt}
+    %\coverlettersection{Summary}
+    %Digital media graduate with project experience in the field of technology based assessment. Currently working as IT %Consultant at We4IT, Bremen in the field of IBM Notes Domino and XPages applications. Master studies focused on teams from %different disciplines and cultural backgrounds on solutions for complex problems.\\
+    
+    
+    %============================================================================%
+    %
+    %	CV SECTIONS AND EVENTS (MAIN CONTENT)
+    %
+    %============================================================================%
+    
+    %---------------------------------------------------------------------------------------
+    %	EXPERIENCE
+    %----------------------------------------------------------------------------------------
+    
+    %
+        \cvevent{}{\textit{To Whom It May Concern}}
+        
+        \vspace{12pt}
+    %
+
+
+    This cover letter supplements my CV in my application for the position of senior data engineer at Typeform. 
+    Below is a more in-depth description on how my experience through my career meets the expectations of the role
+    \par \vspace{4pt}
+    I hope this will show why I'm a great fit for the team at 
+    % Business Name
+    Typeform.
+    %
+    \par \vspace{12pt}
+    % Examples Here
+    The core job requirements of data engineering have been something I have had a broad experience and subject matter range with Spend Network, PikPok, and Westpac. Over the past 4 years I have involved myself with designing, engineering, developing, and delivering solutions and infrastructure for both external and internal stakeholders. 
+    \par \vspace{4pt}
+    My tools of choice for this have been SQL and Python for coding, ETL infrastructure with AWS Glue and Airflow, and using AWS Redshift and Glacier as data warehousing solutions.
+    \par \vspace{8pt}
+    In regards to soft skill required for the role I can say that on top of the necessary collaboration and communication with the diverse parties required to engineer robust data solutions, my experience has allowed me to further practice leadership skills that I learnt while managing digital projects at Heineken.
+    \par \vspace{8pt}
+    Furthering this, I have gained a passion for mentoring less experienced colleagues during my time at Spend Network where I helped junior members up-skill technically across our tech stack. Also my tenure as President of the Chris Evans Squash \& Sauna Club has required aquianting new members of the club with the various sports the club became involved with during the pandemic years this involved the core sport of squash the club is named from as well as team sports like Volleyball and Hockey
+    \par \vspace{12pt}
+    % Endof Examples
+    I hope the above examples provide a greater insight into my skills and I look forward to hearing further from the Typeform team soon    
+    \par \vspace{8pt}
+    Regards
+    \par \vspace{8pt}
+    \includegraphics[width=0.2\linewidth]{Signature.png}
+    \par \vspace{2pt}
+    \textit{ \textcolor{softcol} {Peter Bowman}}
+    %
+
+    %\textcolor{softcol}{\hrule}
+
+    
+    %============================================================================%
+    %
+    %
+    %
+    %	DOCUMENT END
+    %
+    %
+    %
+    %============================================================================%
+    \end{document}
