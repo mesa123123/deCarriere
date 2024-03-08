@@ -1,8 +1,7 @@
 *
-!*.html
-!*.css
-!Peter Bowman Resume.pdf
-!README.md
 !.gitignore
-!pointers.md
-
+!README.md
+!Peter Bowman Resume.pdf
+!Peter Bowman Cover Letter.pdf
+!Peter Bowman Cover Letter.tex
+!Peter Bowman Resume.tex

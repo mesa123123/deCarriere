@@ -1,27 +1,3 @@
-    %-----------------------------------------------------------------------------------------------------------------------------------------------%
-    %	The MIT License (MIT)
-    %
-    %	Copyright (c) 2015 Jan Küster
-    %
-    %	Permission is hereby granted, free of charge, to any person obtaining a copy
-    %	of this software and associated documentation files (the "Software"), to deal
-    %	in the Software without restriction, including without limitation the rights
-    %	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    %	copies of the Software, and to permit persons to whom the Software is
-    %	furnished to do so, subject to the following conditions:
-    %	
-    %	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    %	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    %	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    %	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    %	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    %	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-    %	THE SOFTWARE.
-    %	
-    %
-    %-----------------------------------------------------------------------------------------------------------------------------------------------%
-    
-    
     %============================================================================%
     %
     %	DOCUMENT DEFINITION
@@ -45,7 +21,12 @@
     
     % provides \isempty test
     \usepackage{xifthen}
-    
+    \usepackage{xcolor}
+    \usepackage{hyperref} 
+    \hypersetup{
+      colorlinks=true,
+      urlcolor=blue!70!black
+    }
     %----------------------------------------------------------------------------------------
     %	FONT
     %----------------------------------------------------------------------------------------
@@ -68,6 +49,7 @@
     % more font size definitions
     \usepackage{moresize}		
     \usepackage{fontawesome5}
+    \usepackage[none]{hyphenat}
     
     %----------------------------------------------------------------------------------------
     %	PAGE LAYOUT  DEFINITIONS
@@ -81,14 +63,14 @@
     \usepackage[a4paper]{geometry}		
     
     % for example, change the margins to 2 inches all round
-    \geometry{top=2cm, bottom=-.6cm, left=1.5cm, right=1.5cm} 	
-
+    \geometry{top=1.25cm, bottom=-.6cm, left=1.5cm, right=1.5cm} 	
+    
     %use customized header
     \usepackage{fancyhdr}				
     \pagestyle{fancy}
     
     %less space between header and content
-    \setlength{\headheight}{12pt}		
+    \setlength{\headheight}{-5pt}		
     
     
     %customize entries left, center and right
@@ -130,7 +112,7 @@
     
     %for drawing graphics		
     \usepackage{tikz}				
-    \usetikzlibrary{shapes, backgrounds, mindmap, trees, positioning}
+    \usetikzlibrary{shapes, backgrounds, mindmap, trees, positioning, shapes.geometric}
     
     
     %----------------------------------------------------------------------------------------
@@ -140,15 +122,16 @@
     \usepackage{color}
     
     %accent color
-    \definecolor{sectcol}{RGB}{75,225,175}
+    \definecolor{sectcol}{RGB}{0,150,100}
     
     %dark background color
     \definecolor{bgcol}{RGB}{110,110,110}
-    
-    %light background / accent color
-    \definecolor{softcol}{RGB}{175,175,175}
+   
+    % semi-lighy background/color
+    \definecolor{semicol}{RGB}{150,150,150}
 
-    \definecolor{ubersoftcol}{RGB}{225,225,225}
+    %light background / accent color
+    \definecolor{softcol}{RGB}{225,225,225}
     
     %============================================================================%
     %
@@ -174,60 +157,13 @@
     %remove section num		
     \renewcommand{\thesection}{}			
     
-    %----------------------------------------------------------------------------------------
-    % 	ARROW GRAPHICS in Tikz
-    %----------------------------------------------------------------------------------------
-    
-    % a six pointed arrow poiting to the left
-    \newcommand{\tzlarrow}{(0,0) -- (0.2,0) -- (0.3,0.2) -- (0.2,0.4) -- (0,0.4) -- (0.1,0.2) -- cycle;}	
-    
-    % include the left arrow into a tikz picture
-    % param1: fill color
-    %
-    \newcommand{\larrow}[1]
-    {\begin{tikzpicture}[scale=0.58]
-    	 \filldraw[fill=#1!100,draw=#1!100!black]  \tzlarrow
-     \end{tikzpicture}
-    }
-    
-    % a six pointed arrow poiting to the right
-    \newcommand{\tzrarrow}{ (0,0.2) -- (0.1,0) -- (0.3,0) -- (0.2,0.2) -- (0.3,0.4) -- (0.1,0.4) -- cycle;}
-    
-    % include the right arrow into a tikz picture
-    % param1: fill color
-    %
-    \newcommand{\rarrow}
-    {\begin{tikzpicture}[scale=0.7]
-    	\filldraw[fill=sectcol!100,draw=sectcol!100!black] \tzrarrow
-     \end{tikzpicture}
-    }
-%
-% Things you will do
-% Be part of the team responsible for the near-real-time transfer of data from source systems to the Data Lake, between systems within Typeform, and to/from our external tools.
-% Collaborate in designing, engineering, developing, and delivering an information technology infrastructure supporting the entire Data Team.
-% Help develop a scalable data architecture with a team of data engineers who populate and maintain Typeform’s Data Lake.
-% Lead and support Typeform’s engineering efforts in designing, developing, and rolling out Data systems and services.
-% Partner and learn with system architects, functional managers, and program managers to deliver mission-critical data to wherever it is needed
-% Help in building infrastructure and services that have an immediate impact on our business and customers.
-% Mentor and upskill junior team members.
- 
-% What you already bring to the table:
-% 4+ years of experience in the Data Engineering field, with a proven track record of technical ability
-% Previous experience in using an event-driven architecture with Kafka
-% Excellent stakeholder management and communication skills 
-% Experience with Scala, Python, and SQL for data pipelines
-% Experience with modern cloud data warehouses (like AWS Redshift, GCP BigQuery, Azure Synapse or Snowflake)
-% Strong problem-solving skills 
-% Strong mentorship skills
 
-% Experience with Apache Spark (in both batch and streaming)
-% Experience with a job orchestrator (Airflow, Google Cloud Composer, Flyte, Prefect, Dagster)
-% Experience with dbt
-%
-%
-
-
-    
+    % Define a command for the technology bubble
+    \newcommand{\techused}[1]{
+        \vspace{3pt}
+        {\small\textcolor{bgcol}{Technologies: {#1}}}
+        \vspace{5pt}
+    }   
     %----------------------------------------------------------------------------------------
     %	custom sections
     %----------------------------------------------------------------------------------------
@@ -235,6 +171,12 @@
     % create a coloured box with arrow and title as cv section headline
     % param 1: section title
     %
+    \newcommand{\cvsection}[1]
+    {
+    	\begin{center}
+    		\large\textcolor{sectcol}{\textbf{#1}}
+    	\end{center}
+    }
     
     %create a coloured arrow with title as cv meta section section
     % param 1: meta section title
@@ -257,17 +199,21 @@
     % param 3:	institution (where did you work / study)
     % param 4:	list of paragraphs
     %
-    \newcommand{\cvevent} [3]
+    \newcommand{\cvevent}[5]
     {
     
     \begin{tabular*}{1\textwidth}{p{13.6cm}  x{3.9cm}}
-    	\text{#2} \textcolor{sectcol}{#1} &   \vspace{2.5pt}\textcolor{sectcol}{#1}
+    	\textbf{#2} - \textcolor{bgcol}{#3} &   \vspace{2.5pt}\textcolor{sectcol}{#1}
     \end{tabular*}
     
     \vspace{-8pt}
-    \textcolor{ubersoftcol}{\hrule}
-    	
-    \vspace{3pt}
+    \textcolor{softcol}{\hrule}
+    \vspace{6pt}
+    	\foreach \desc in {#4}{
+    		$\cdot$ \desc\\[3pt]
+    	}
+    \def\temp{#5}\ifx\temp\empty\ \else\techused{#5}\fi
+    \vspace{2pt}
     }
 
     % A modification of this for my degree, putting it into two columns for the sake of space
@@ -340,30 +286,34 @@
     %	TITLE HEADLINE
     %----------------------------------------------------------------------------------------
     \vspace{-8pt}
-    {%\begin{flushleft}
-    	\large \textsc{Peter Bowman}
-    {%\end{flushleft}}
+    \begin{center}
+    	\HUGE \textsc{Peter Bowman} \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \textsc{Resume}\\[2pt]
+    \end{center}
     
     
     
-    \vspace{12pt}
+    \vspace{6pt}
     
     
     %---------------------------------------------------------------------------------------
     %	META SECTION
     %----------------------------------------------------------------------------------------
-    \metasection{}{\faIcon{location-arrow} Brighton, United Kingdom, BN2 9JA}
-    \metasection{}{\faIcon{at} bowmanpetedev@gmail.com}
-    \metasection{}{\faIcon{phone-square-alt} +447411123680}
-    \metasection{}{\faIcon{linkedin} bowmanpete123}
+    \newcommand{\nznum}{+64273111199}
+    \newcommand{\uknum}{+447411123680}
+
+    \metasection{\faIcon{at} \href{mailto:peter.ralph.bowman@gmail.com}{peter.ralph.bowman@gmail.com} }{\faIcon{linkedin} \href{https://www.linkedin.com/in/peter-ralph-bowman/}{peter-ralph-bowman}}
+    \metasection{\faIcon{phone-square-alt} \nznum{}}{\faIcon{passport} Citizenships: New Zealand, United Kingdom, Ireland}
+    
     \normalsize
     
-    \vspace{32pt}
-    %---------------------------------------------------------------------------------------
+  
+%   ---------------------------------------------------------------------------------------
     %	SUMMARAY (optional)
     %----------------------------------------------------------------------------------------
     %\vspace{-6pt}
-    %\coverlettersection{Summary}
+    %\cvsection{Summary}
+    %Digital media graduate with project experience in the field of technology based assessment. Currently working as IT %Consultant at We4IT, Bremen in the field of IBM Notes Domino and XPages applications. Master studies focused on teams from %different disciplines and cultural backgrounds on solutions for complex problems.\\
+    
     
     %============================================================================%
     %
@@ -374,43 +324,64 @@
     %---------------------------------------------------------------------------------------
     %	EXPERIENCE
     %----------------------------------------------------------------------------------------
+    \cvsection{Experience}
+    %
+    \cvevent{2023-2024}{Python Engineer}{Spend Network | Government Technology}{
+            {Lead the Design, Creation, and Development of internal tooling that tracked up to date Government Procurement activity for the entire EU. This was used by Spend Network's marketing team to target and convert potential clients into loyal customers.},
+        {Created, Implemented, and Automated client facing email products that allowed customers to connect with Government Procurement Opportunities, creating a new revenue stream for the Spend Network.}}{Python (Pytest, Pyspark, Pandas, smtp), SQL, AWS (Athena, Glue, Quicksight, Glacier, Code Build, IAMS, ECR), Docker}
+        \cvevent{2023}{Data Engineer}{Pik Pok | Interactive Media | Contract Role}{
+    	{Created internal analytics products allowing all stakeholders in the company to better predict, interpret, and improve revenue streams for the business.},
+            {Lead initiatives to adopt business driven development, documentation, and developer experience initiatives, which increased code quality, feature development speed, and knowledge retention for the entire data engineering department.}
+        }{Python (Pytest, Pandas, Celery), SQL, Docusaurus, AWS: Redshift, PostgresQL}
+    \cvevent{2020-2023}{Data Engineer/Test Engineer}{Westpac | Banking and Financial Sector}{
+            {Designed, developed, and implemented ETL solutions to galvanize the AI tools of Westpac. This enhanced regulatory compliance, and predictive analytics of the Bank. Hedging billions of dollars worth of risk in the financial markets of New Zealand.},
+            {Lead Quality Engineering for Westpac's data linage solutions. Westpac used this to become a leader in transparency and compliance with the regulatory bodies that govern the financial system of New Zealand.},
+            {Consulted on the creation and standardization of GitOps and DevOps practices for the Engineers within Westpac's Data and AI spaces. This allowed the engineers of Westpac and its vendors to iterate product development with less technical debt, higher code quality, and lower development costs potentially saving the business millions in lost revenue from refactoring and incident management.}
+        }{Python (FastAPI, Pandas, Pytest, Locust, SQAlchemy, Poetry), AWS (ECR, API Gateway), Hadoop, Scala, Spark, Hive, Postgres, Informatica}
+
+        \cvevent{2019}{Data and Digital Specialist}{Heineken | FMCG - Beverages}{
+            {Collaborated with colleagues on an international scale to design the vision of Heineken Supply Chain's "data and digital" strategy. Encompassing many industries from robotics to sustainability, the design of this strategy helped position Heineken eliminate redundant manual inputs, wasteful resource use, and outdated business practices to create a global supply chain that could thrive in the digital age.},
+            {Lead the Australian and New Zealand execution of Heineken's data and digital strategy. Created, implemented, and managed multiple projects within Heineken's Australia/New Zealand supply chain, allowed Heineken to strengthen business ties with the Government, Business, and University cementing Heineken's reputation as an innovating force within New Zealand's economy.}
+        }{}
+    %
+
+
     
     %
-        \cvevent{}{\textit{To Whom It May Concern}}
-        
-        \vspace{12pt}
+    % \cvsection{Leadership}
+    % 
+    % \cvevent{2021-2023}{President}{The Chris Evans Squash Club}{
+    % 	{Orchestrated the scheduling of diverse calendar events, diversifying the clubs sporting repertoire},
+    % 	{Drove club growth by spearheading membership expansion initiatives, tripling membership}
+    % }
+    
+    %\textcolor{softcol}{\hrule}
+    
+    %---------------------------------------------------------------------------------------
+    %	EDUCATION SECTION
+    %--------------------------------------------------------------------------------------
+    \cvsection{Education}
+    
+    \cvevent{2018}{Graduate Diploma of Software Engineering}{Toi Ohomai Institute of Technology}{
+    	{\textbf{Final Project:} NZ Rugby Sevens Championship Tournament PWA},
+    	{\textbf{Electives:} AI, Database Engineering, UI Design, Business Analysis}
+    }{MSSql, Enterprise Architect, Javascript (Vue, Jest), C\#, Python (Pandas, Numpy, Scipy)}
+    
+    %\textcolor{softcol}{\hrule}
+    
     %
-
-
-    This cover letter supplements my CV in my application for the position of senior data engineer at Typeform. 
-    Below is a more in-depth description on how my experience through my career meets the expectations of the role
-    \par \vspace{4pt}
-    I hope this will show why I'm a great fit for the team at 
-    % Business Name
-    Typeform.
-    %
-    \par \vspace{12pt}
-    % Examples Here
-    The core job requirements of data engineering have been something I have had a broad experience and subject matter range with Spend Network, PikPok, and Westpac. Over the past 4 years I have involved myself with designing, engineering, developing, and delivering solutions and infrastructure for both external and internal stakeholders. 
-    \par \vspace{4pt}
-    My tools of choice for this have been SQL and Python for coding, ETL infrastructure with AWS Glue and Airflow, and using AWS Redshift and Glacier as data warehousing solutions.
-    \par \vspace{8pt}
-    In regards to soft skill required for the role I can say that on top of the necessary collaboration and communication with the diverse parties required to engineer robust data solutions, my experience has allowed me to further practice leadership skills that I learnt while managing digital projects at Heineken.
-    \par \vspace{8pt}
-    Furthering this, I have gained a passion for mentoring less experienced colleagues during my time at Spend Network where I helped junior members up-skill technically across our tech stack. Also my tenure as President of the Chris Evans Squash \& Sauna Club has required aquianting new members of the club with the various sports the club became involved with during the pandemic years this involved the core sport of squash the club is named from as well as team sports like Volleyball and Hockey
-    \par \vspace{12pt}
-    % Endof Examples
-    I hope the above examples provide a greater insight into my skills and I look forward to hearing further from the Typeform team soon    
-    \par \vspace{8pt}
-    Regards
-    \par \vspace{8pt}
-    \includegraphics[width=0.2\linewidth]{./Signature.png}
-    \par \vspace{2pt}
-    \textit{ \textcolor{softcol} {Peter Bowman}}
-    %
+    \cvevent{2012 - 2015}{Bachelor of Arts}{Victoria University of Wellington}{
+            {{\textbf{Major:} Economics} \hspace{187pt} {\textbf{Electives:} Philosophy, Computer Science} },
+    	{\textbf{Minors:} English Literature, Mathematics}
+    }{}
+    
+    \cvevent{}{Certifications}{Professional \& Ad-Professional}{
+    {\textbf{Foundation Certification} - International Software Testing Qualifications Board},
+    {\textbf{NZ Speech and Drama Qualifications} - New Zealand Speech Board}
+}{}
 
     %\textcolor{softcol}{\hrule}
-
+    
     
     %============================================================================%
     %
