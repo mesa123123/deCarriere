@@ -1,0 +1,20 @@
+\input{../Utils/Setup.tex}
+
+% CV Event Component
+% ----------
+\begin{tabular*}{1\textwidth}{p{13.6cm}  x{3.9cm}}
+	\textbf{\JINJAVAR{position_title}} - \textcolor{bgcol}{\JINJAVAR{company_name} | \JINJAVAR{industry}} &   \vspace{2.5pt}\textcolor{sectcol}{\JINJA{ if start_date|int() == end_date|int() }
+		\JINJAVAR{start_date}
+		\JINJA{ else }
+		\JINJAVAR{start_date} - \JINJA{end_date}
+		\JINJA { endif }}
+\end{tabular*}
+\vspace{-8pt}
+\textcolor{softcol}{\hrule}
+\JINJA{ for item in role_details }
+$\cdot$ \JINJAVAR{item}\\[3pt]
+\JINJA{ endfor }
+\vspace{9pt}
+{\small\textcolor{bgcol}{Technologies: \JINJAVAR{technologies}}}
+\vspace{9pt}
+% ----------

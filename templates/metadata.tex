@@ -1,0 +1,123 @@
+% --------------------------------    
+% Document MetaData
+% --------------------------------    
+
+% Document Class and Encoding
+% --------------------------------
+\documentclass[10pt,A4]{article}	
+    
+    
+% Imports
+% --------------------------------
+
+% Colors
+% ----------
+\usepackage{color}
+% \isempty test
+% ----------
+\usepackage{xifthen}
+% ----------
+% Hyperref
+% ----------
+\usepackage{hyperref}
+% ----------
+% For FontSize
+% ----------
+\usepackage{moresize}		
+% ----------
+% For Icons
+% ----------
+\usepackage{fontawesome5}
+% ----------
+%define page styles using geometry
+% ----------
+\usepackage[a4paper]{geometry}		
+% ----------
+% Customize the header
+% ----------
+\usepackage{fancyhdr}				
+% ----------
+%for layouting tables
+% ----------
+\usepackage{multicol}			
+\usepackage{multirow}
+% ----------
+%extended aligning of tabular cells
+% ----------
+\usepackage{array}
+% ----------
+% graphics
+% ----------
+%for header image
+\usepackage{graphicx}
+%for floating figures
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{tikz}				
+\usetikzlibrary{shapes, backgrounds, mindmap, trees, positioning}
+% ----------    
+
+% Fonts
+% --------------------------------
+% Font Style
+% ----------    
+\usepackage[light]{roboto}
+% ----------    
+% Link Style
+% ----------
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue!70!black
+}
+% ----------
+
+% set font default
+% ----------    
+\renewcommand*\familydefault{\sfdefault} 	
+\usepackage[T1]{fontenc}
+% ----------    
+
+% Margins
+% --------------------------------
+\geometry{top=1cm, bottom=-.6cm, left=1cm, right=1cm} 	
+% ----------
+
+% Header
+% --------------------------------
+\pagestyle{fancy}
+\setlength{\headheight}{12pt}		
+\setlength{\parindent}{0mm}
+% ----------
+
+% Table Defs
+% --------------------------------
+\newcolumntype{x}[1]{%
+    >{\raggedleft\hspace{0pt}}p{#1}}%
+% ----------
+    
+% Color Defs
+% --------------------------------
+%accent color
+\definecolor{sectcol}{RGB}{0,150,100}
+%dark background color
+\definecolor{bgcol}{RGB}{110,110,110}
+%light background / accent color
+\definecolor{softcol}{RGB}{175,175,175}
+\definecolor{ubersoftcol}{RGB}{225,225,225}
+% ----------
+
+% Sections Definitions
+% --------------------------------
+
+% ReDefinitions
+% ----------
+% remove top header line
+\renewcommand{\headrulewidth}{0pt} 
+%remove bottom header line
+\renewcommand{\footrulewidth}{0pt}	  	
+%remove pagenum
+\renewcommand{\thepage}{}	
+%remove section num		
+\renewcommand{\thesection}{}			
+% ----------
+    
