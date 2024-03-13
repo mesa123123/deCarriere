@@ -1,0 +1,34 @@
+company_name: Pikpok
+industry: Interactive Media
+contract: true
+position_title: Data Engineer
+start_date: 2023
+end_date: 2023
+technologies:
+  - Programming:
+      - Python:
+          - Pytest
+          - Pandas
+          - Celery
+  - DevOps:
+      - Linux
+  - Documentation:
+      - Docusaurus
+  - Cloud:
+      - AWS:
+          - Redshift
+  - Database:
+      - SQL
+      - Redshift
+      - Postgres
+  - SDLC:
+      - BDD
+role_points:
+  - 1:
+    whatIdid: Created internal analytics products.
+    howItHelped: Allowed all stakeholders to better predict, interpret and improve revenue streams for the business
+  - 2:
+    whatIdid: Lead initiatives to adpot BDD, documentation standards, and developer experience initiatives.
+    howItHelped: Increased code quality, feature development speed, and knowledge retention for the entire data engineering department
+---
+
