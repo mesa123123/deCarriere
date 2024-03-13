@@ -5,16 +5,16 @@
 \pagestyle{fancy}
 % CONTENT
 \begin{center}
-    \HUGE \textsc{ \JINJAVAR{resume_name} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \textsc{Resume}\\[2pt]
+    \HUGE \textsc{ \JINVAR{resume_name} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \textsc{Resume}\\[2pt]
 \end{center}
 \vspace{4pt}
 
 \vspace{4pt}
 
-\JINJAVAR{ contact_section }
+\JINVAR{ contact_section }
 
 \JINJA{ for section in resume_sections }
- \JINJAVAR{section}
+ \JINVAR{section}
 \JINJA{ end for }
 % ENDOF CONTENT
 \end{document}
