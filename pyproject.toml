@@ -3,7 +3,7 @@ name = "htmlCV"
 version = "2024.03.13"
 authors = [{ name = "Peter Bowman", email = "peter.ralph.bowman@gmail.com"}]
 requires-python = ">=3.11"
-dependencies = ["pydantic", "Nuitka", "pyinstaller", "Jinja2", "pyyaml"]
+dependencies = ["pydantic", "pydantic[email]", "Nuitka", "pyinstaller", "Jinja2", "pyyaml"]
 
 [project.optional-dependencies]
 dev = ["black", "pylint", "debugpy", "isort", "pyright"]

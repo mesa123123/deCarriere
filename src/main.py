@@ -1,27 +1,31 @@
+from os import makedirs
+from os.path import basename, join
+from subprocess import DEVNULL, run
+
 import yaml
-from jinja2 import Environment, FileSystemLoader
-from os.path import dirname, abspath, basename, join
-from src.experience_type import ExperienceEvent
 
-# Allows any created files to go to the /dist directory
-BASE_PATH = dirname(abspath(__file__))
-DIST_DIR  = 'dist'
-DIST_PATH = join(BASE_PATH, DIST_DIR)
+from src.content_writer import main as write_content
+from src.definitions import DIST_PATH
 
 
-# Rewrite Jinja2 to work with Latex \JINJA command
-env = Environment(
-    block_start_string="\\JINJA{",
-    block_end_string="}",
-    variable_start_string="\\JINVAR{",
-    variable_end_string="}",
-    comment_start_string="\\#{",
-    comment_end_string="}",
-    line_statement_prefix="%%",
-    line_comment_prefix="%#",
-    trim_blocks=True,
-    autoescape=False,
-    loader=FileSystemLoader(BASE_PATH),
-)
+def main():
+    tex_file = "resume_test"
+    resume = write_content()
+
+    makedirs(DIST_PATH, exist_ok=True)
+
+    tex_output_path = join(DIST_PATH, f"{tex_file}.tex")
+    # Write Text File
+    with open(tex_output_path, "w", encoding="utf-8") as output:
+        output.write(resume)
+    # Write Pdf
+    # cmd = ["latexmk", "-pdf", basename(tex_output_path)]
+    # status = run(cmd, cwd=DIST_PATH, stdout=DEVNULL, stderr=DEVNULL, check=False)
+    # Check the result
+    # if status.returncode != 0:
+    #     return 1
+    # return 0
 
 
+if __name__ == "__main__":
+    main()
