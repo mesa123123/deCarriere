@@ -55,6 +55,8 @@
 \usepackage{float}
 \usepackage{tikz}				
 \usetikzlibrary{shapes, backgrounds, mindmap, trees, positioning}
+% For greater flexibility
+\usepackage{enumitem}
 % ----------    
 
 % Fonts
@@ -134,49 +136,10 @@
 }
 % ----------
 
-% CV Event
-% ----------
-\newcommand{\cvevent} [1]
-{
-
-\begin{tabular*}{1\textwidth}{p{13.6cm}  x{3.9cm}}
-    \text{#1} 
-\end{tabular*}
-
-\vspace{-8pt}
-\textcolor{ubersoftcol}{\hrule}
-    
-\vspace{3pt}
-}
-% ----------
-
-% CV Event Dual Column
-% ----------
-\newcommand{\cveventdualcolumn}[4]
-{
-
-\begin{tabular*}{1\textwidth}{p{13.6cm}  x{3.9cm}}
-    \mbox{\mystrut \hspace{87pt}\textit{#1}}\\
-\end{tabular*}
-
-\vspace{-8pt}
-\textcolor{softcol}{\hrule}
-\vspace{6pt}
-
-    \foreach \desc in {#4}{
-        $\cdot$ \desc\\[3pt]
-    }
-    
-\vspace{3pt}
-}
-% ----------
-
 % Empty Box Strut
 % ----------
 \newcommand{\mystrut}{\rule[-.3\baselineskip]{0pt}{\baselineskip}}
 % ----------
-    
-    
     
 % --------------------------------    
 %	DOCUMENT CONTENT
@@ -184,8 +147,8 @@
 
 % Variable Defs
 % ----------
-\newcommand{\businessname}{Digital Garage}
-\newcommand{\jobadlink}{\href{https://www.seek.co.nz/job/73650533?ref=search-standalone&type=standout#sol=8e9e939068a82929dcdafd7eedc1369da758cc3d}{seek.co.nz}}
+\newcommand{\businessname}{Sourced}
+\newcommand{\jobadlink}{\href{https://www.seek.co.nz/job/74255806?ref=search-standalone&type=standout\#sol=ff2934c461a7cf10b7aa14ecdf438175c4949599}{seek.co.nz}}
 \newcommand{\ukcontact}
 {
 \metasection{}{\faIcon{phone-square-alt} +447411123680}
@@ -196,13 +159,13 @@
 }
 
 \begin{document}
-\pagestyle{fancy}	
+\pagestyle{fancy}
 
 % Title
 % ----------
 \vspace{-8pt}
 \begin{flushleft}
-    \large \textsc{Peter Bowman}
+	\large \textsc{Peter Bowman}
 \end{flushleft}
 % ----------
 % Meta Sections
@@ -216,38 +179,57 @@
 
 % Main Content
 % --------------------------------
-\cvevent{\textit{Dear \businessname{} Team}}
-       
-\vspace{12pt}
-    %
-I am writing to you today to accompany my resume in my application for the position of senior data engineer advertised through \jobadlink{}.
-    Below is a more in-depth description on how my experience through my career meets the expectations of the role.
-    \par \vspace{4pt}
-    \par \vspace{12pt}
-    % Examples Here
-    \par \vspace{4pt}
-    % Point One
-    For the last five years I have worked daily with Python \& SQL in the cloud (AWS \& Azure), which gives me great standing to meet the technical expectations of the role. Throughout my career I have working extensively with a wide range of technologies that are essential to the software and data space.
-    %
-    \par \vspace{8pt}
-    % Point Two
-    This has come from my experience in a deliberate variety of industries that are supported in by software and data engineering. This encompasses many business sizes and team structures and approaches to how organisations use and utilize their data. I take from this the ability to join and contribute quickly to the teams effectiveness, as well as adapting my knowledge to the teams needs as well as imparting skills and lessons through a broad base of industry knowledge.
-    %
-    \par \vspace{8pt}
-    % Point Three
-    %
-    \par \vspace{12pt}
-    % Endof Examples
-    I hope the above provides a greater insight into my skills and I look forward to hearing further from the \businessname{} team soon
-    \par \vspace{8pt}
-    Regards
-    \par \vspace{8pt}
-    \includegraphics[width=0.2\linewidth]{./Assets/Signature.png}
-    \par \vspace{2pt}
-    \textit{ \textcolor{softcol} {Peter Bowman}}
-    %
+\begin{tabular*}{1\textwidth}{p{13.6cm}  x{3.9cm}}
+	\textit{Dear \businessname{} Team}
+\end{tabular*}
 
-    %\textcolor{softcol}{\hrule}
+\vspace{-8pt}
+\textcolor{ubersoftcol}{\hrule}
+
+\vspace{3pt}
+\vspace{12pt}
+%
+I am writing to you today to accompany my resume in my application for the position of senior data engineer advertised through \jobadlink{}.
+Below is a more in-depth description on how my experience through my career meets the expectations of the role.
+\par \vspace{4pt}
+\par \vspace{12pt}
+% Examples Here
+\par \vspace{4pt}
+% Point One
+The job description states that candidates require collaboration across operations and development teams, as well as technical leadership ability. These are skills I have crafted leading many projects, across many departments, whilst implementing the data and digital processes at Heineken NZ. My roles since have allowed me to further hone these skills as constant collaboration with vast quantities of stakeholders from all backgrounds, was key to my success. Most recently this was seen during my time at Spend Network where we were creating and maintaining green field projects being released to market.
+%
+\par \vspace{8pt}
+% Point Two
+During these projects I my activities included advising on the requirements of, as well as reviewing and up-skilling the work of my more junior peers. Being accountable for their work in to my up-line and was something that I relished in the role as imparting what wisdom I have gained through my career was very fulfilling.
+%
+\par \vspace{8pt}
+% Point Three
+As a final point I have looked at the required tech stack for role, and in order to help outline where I have had academic and professional experience with the required technologies, I've listed the following:
+
+\begin{itemize}[leftmargin=16pt]
+	\setlength\itemsep{0.0005em}
+	\item \textbf{SQL:} \textit{Graduate Diploma (SwE), Heineken, Westpac, Pik Pok, Spend Network}
+	\item \textbf{Python:} \textit{Heineken, Westpac, Pikpok, Spend Network}
+	\item \textbf{Bash:} \textit{Heineken, Westpac, Pik Pok, Spend Network}
+	\item \textbf{PostgresQL:} \textit{Westpac, Pik Pok, Spend Network}
+	\item \textbf{DBT:} \textit{Westpac, Spend Network}
+	\item \textbf{Jenkins:} \textit{Pik Pok, Spend Network}
+	\item \textbf{AWS:} \textit{Westpac, Pik Pok, Spend Network}
+\end{itemize}
+
+%
+\par \vspace{12pt}
+% Endof Examples
+I hope the above provides a greater insight into my skills and I look forward to hearing further from the \businessname{} team soon
+\par \vspace{8pt}
+Regards
+\par \vspace{8pt}
+\includegraphics[width=0.2\linewidth]{../Assets/Signature.png}
+\par \vspace{2pt}
+\textit{ \textcolor{softcol} {Peter Bowman}}
+%
+
+%\textcolor{softcol}{\hrule}
 \end{document}
 
 % --------------------------------
