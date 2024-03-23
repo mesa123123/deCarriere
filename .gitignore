@@ -2,6 +2,7 @@
 !src/*
 !Documents/*
 !Data/*
+!Data/Events/*
 !pyproject.toml
 !templates/*
 *.output

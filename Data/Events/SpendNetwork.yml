@@ -1,0 +1,33 @@
+company_name: Spend Network
+industry: Gov Tech
+contract: false
+position_title: Python Engineer
+start_date: 2023
+end_date: 2024
+technologies:
+  - Cloud:
+      - AWS:
+          - Athena
+          - Glue
+          - Quicksight
+          - Glacier
+          - Code Build
+          - IAMS
+          - Elastic Container Registry
+  - Programming:
+      - Python:
+          - Pytest
+          - Pyspark
+          - Pandas
+          - smtp
+  - Database:
+      - SQL
+  - DevOps:
+      - Docker
+role_details:
+  - action: Lead the design, creation, and development of internal tooling that tracked up to date government procurement activity for the entire EU/UK region.
+    affect: This was used by Spend Network's marketing team to target and convert potential clients into loyal customers.
+    category: development
+  - action: Created, implemented, and automated client facing email products that allowed customers to connect with government procurement opportunities.
+    affect: This created a new revenue stream for Spend Network
+    category: management
