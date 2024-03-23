@@ -1,0 +1,7 @@
+\begin{center}
+	\large\textcolor{sectcol}{\textbf{\JINVAR{ section_name }}}
+\end{center}
+\JINJA{ for event in section_events}
+\resumeEvent{\JINVAR{event.position_title}}{\JINVAR{event.company_name}}{\JINVAR{event.industry}}{{\JINJA{ if event.start_date|int() == event.end_date|int() }\JINVAR{event.start_date}\JINJA{ else }\JINVAR{event.start_date} - \JINVAR{event.end_date}\JINJA{ endif }}}{\JINJA{ for item in event.role_details }$\cdot$ {\JINVAR{item}}\\[3pt]\JINJA{ endfor }}{\JINVAR{event.technologies}}
+\JINJA{ endfor }
+\vspace{8pt}

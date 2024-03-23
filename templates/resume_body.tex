@@ -1,0 +1,22 @@
+% LOAD METADATA
+\JINJA{include "templates/metadata.tex"}
+\JINJA{include "templates/resume_event.tex"}
+\JINJA{include "templates/contact_section.tex"}
+
+\begin{document}
+\pagestyle{fancy}
+% CONTENT
+\begin{center}
+    \HUGE \textsc{ \JINVAR{resume_name} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \textsc{Resume}\\[2pt]
+\end{center}
+\vspace{4pt}
+
+\vspace{4pt}
+
+\contactssection{\JINVAR{contact_section.linkedin_link}}{\JINVAR{contact_section.linkedin_uname}}{\JINVAR{contact_section.email_addr}}{\JINJA{for cizship in contact_section.citizenships}\JINVAR{ cizship }, \JINJA{ endfor } }{\JINVAR{contact_section.ph_num}}
+
+\JINJA{ for section in resume_sections }
+ \JINVAR{section}
+\JINJA{ endfor }
+% ENDOF CONTENT
+\end{document}

@@ -3,7 +3,7 @@
 !Documents/*
 !Data/*
 !pyproject.toml
-!Templates/*
+!templates/*
 *.output
 *.aux
 *.*fdb*
