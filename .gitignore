@@ -1,7 +1,13 @@
 *
 !src/*
-*.output
 !Documents/*
 !Data/*
 !pyproject.toml
 !Templates/*
+*.output
+*.aux
+*.*fdb*
+*.fls
+*.log
+*.gz
+*.out
