@@ -1,5 +1,6 @@
 *
 !src/*
+*.output
 !Documents/*
 !Data/*
 !pyproject.toml
