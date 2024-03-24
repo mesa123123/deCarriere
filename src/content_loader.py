@@ -57,8 +57,30 @@ def parse_tech_category(categories: List[dict]) -> List[TechCategoryDetail]:
     ]
 
 
-def parse_roles(role_points: List[dict]) -> List[RoleDetail]:
-    return [
+def parse_tech_objects(tech_details: List[TechCategoryDetail]) -> str:
+    return ", ".join(
+        [
+            (
+                technology.name
+                if technology.libraries is None
+                else technology.name
+                + ": "
+                + "("
+                + ", ".join(technology.libraries)
+                + ")"
+            )
+            for technology_cat in tech_details
+            for technology in technology_cat.technologies
+        ]
+    )
+
+
+def parse_tech_content(event_techs: List[dict]) -> str:
+    return parse_tech_objects(parse_tech_category(event_techs))
+
+
+def parse_roles(role_points: List[dict]) -> List[str]:
+    role_detail_objects = [
         RoleDetail(
             action=point["action"],
             effect=point["affect"],
@@ -66,12 +88,16 @@ def parse_roles(role_points: List[dict]) -> List[RoleDetail]:
         )
         for point in role_points
     ]
+    return [
+        role_detail.action + " " + role_detail.effect
+        for role_detail in role_detail_objects
+    ]
 
 
 def parse_events(events: List[dict]) -> List[ResumeEvent]:
     def process_event(event: dict) -> ResumeEvent:
         event["role_details"] = parse_roles(event["role_details"])
-        event["technologies"] = parse_tech_category(event["technologies"])
+        event["technologies"] = parse_tech_content(event["technologies"])
         return ResumeEvent(**event)
 
     return [process_event(event) for event in events]

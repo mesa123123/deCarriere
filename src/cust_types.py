@@ -1,5 +1,5 @@
 from enum import StrEnum
-from typing import Optional, List
+from typing import List, Optional
 
 from pydantic import BaseModel, EmailStr
 
@@ -50,8 +50,8 @@ class ResumeEvent(BaseModel):
     industry: str
     start_date: int
     end_date: int
-    role_details: List[RoleDetail]
-    technologies: List[TechCategoryDetail]
+    role_details: List[str]
+    technologies: str
 
 
 class ResumeContactDetails(BaseModel):
