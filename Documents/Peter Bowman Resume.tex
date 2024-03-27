@@ -148,7 +148,12 @@
 %\end{tabular*}
 }
 % ----------
- 
+
+\newcommand{\techused}[1]
+{
+    \textcolor{softcol}{Techologies: {#1}}
+}
+
 % CV Event
 % ----------
 % Single Column
@@ -210,19 +215,19 @@
 % Begin Document & Page Style
 % ----------
 \begin{document}
-\pagestyle{fancy}	
+\pagestyle{fancy}
 % ----------
 
 % Variable Defs
 % ----------
 \newcommand{\nznum}{+64273111199}
 \newcommand{\uknum}{+447411123680}
-   
+
 % Content 
 % --------------------------------
 % Title
 \begin{center}
-    \HUGE \textsc{Peter Bowman} \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \textsc{Resume}\\[2pt]
+	\HUGE \textsc{Peter Bowman} \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \textsc{Resume}\\[2pt]
 \end{center}
 \vspace{4pt}
 % ----------
@@ -241,33 +246,34 @@
 \cvsection{Experience}
 % SN
 % ----------
-\cvevent{2023-2024}{Python Engineer}{Spend Network | Government Technology}
+\cvevent{2023-2024}{Senior Python Engineer}{Spend Network | Government Technology}
 {
-{Collaborated with the CTO and wider business to prioritize backlog items, ensuring a balance between short-term deliverables and long-term technology investments, while effectively communicating trade-offs to other business areas.},
-{Designed and implemented continuous and iterative feature development, including ETL pipelines and APIs, leveraging Python and AWS services. Enhancing system security and reliability while collaborating across the development team to influence architecture and feature design.},
-{Independently managed projects from inception to deployment, taking ownership of code quality and operational responsibility.}
+	{Collaborated with the CTO and wider business to prioritize backlog items, ensuring a balance between short-term deliverables and long-term technology investments, while effectively communicating trade-offs to other business areas.},
+	{Designed and implemented continuous and iterative feature development, including ETL pipelines and APIs, leveraging Python and AWS services. Enhancing system security and reliability while collaborating across the development team to influence architecture and feature design.},
+	{Independently managed projects from inception to deployment, taking ownership of requirements gathering, code quality, and operational responsibility.}
 }
 % Tech
-{Python (Pytest, Pyspark, Pandas, smtp), SQL, AWS (Athena, Glue, Quicksight, Glacier, Code Build, IAMS, ECR), Docker}
+{Python (Pytest, Pyspark, Pandas, smtp), SQL, AWS (Athena, Glue, Quicksight, Glacier, Code Build, IAMS, ECR), Docker, Airflow}
 % ----------
 % PIK-POK
 % ----------
-\cvevent{2023}{Data Engineer}{Pik-Pok | Interactive Media | Contract Role}
+\cvevent{2023}{Senior Data Engineer}{Pik-Pok | Interactive Media | Contract Role}
 {
-{Worked with the Engineering Team to design ETL pipelines using Python and AWS, supporting new product integrations for Game Development, Player Testing, and Data Analysts into our core products. Designed APIs for internal business partners, ensuring authentication, versioning, and comprehensive documentation.},
-{Effectively communicated project constraints to other business sectors while collaborating with the entire development team to shape system architecture and feature design.},
-{Demonstrated proficiency in designing, testing, and deploying new features iteratively and continuously. Operated autonomously on projects from inception to completion, assuming full accountability for the code authored, adhering to the ethos of "you build it, you run it."}
+	{Worked with the Engineering Team to design ETL pipelines using Python and AWS, supporting new product integrations for Game Development, Player Testing, and Data Analysts into our core products. Designed APIs for internal business partners, ensuring authentication, versioning, and comprehensive documentation.},
+	{Effectively communicated project constraints to other business sectors while collaborating with the entire development team to shape system architecture and feature design.},
+	{Demonstrated proficiency in designing, testing, and deploying new features iteratively and continuously. Operated autonomously on projects from inception to completion, assuming full accountability for the code authored, adhering to the ethos of "you build it, you run it."}
 }
 % Tech
-{Python (Pytest, Pandas, Celery), SQL, Docusaurus, AWS: Redshift, PostgresQL}
+{Python (Pytest, Pandas, Celery), SQL, Docusaurus, AWS (Redshift), Postgres}
 % ----------
 % Westpac
 % ----------
-\cvevent{2020-2023}{Data Engineer/Test Engineer}{Westpac | Banking and Financial Sector}
+\cvevent{2020-2023}{Data Engineer}{Westpac | Banking and Financial Sector}
 % Point 1
 {
-    {Created and deployed APIs for interconnected services, designed client and partner-facing APIs with a focus on authentication, versioning, and documentation, and developed ETL pipelines using Python and AWS services. Enhanced the availability of our Bank's AI services and effectively communicated trade-offs to various business sectors.},
-    {Collaborated with the bank's data and AI department to establish standardized GitOps and DevOps practices.}
+	{Created and deployed APIs for interconnected services, designed client and partner-facing APIs with a focus on authentication, versioning, and documentation, and developed ETL pipelines using Python and AWS services. Enhanced the availability of our Bank's AI services and effectively communicated trade-offs to various business sectors.},
+	{Standardized, and documented GitOps practices in Westpac's AI department, saving hundreds of thousands in yearly refactoring costs and onboarding times.}
+    {Used Spark to create a data mart factory for quality assurance, saving hundreds of man hours in data collection costs.}
 }
 % Tech
 {Python (FastAPI, Pandas, Pytest, Locust, SQAlchemy, Poetry), AWS (ECR, API Gateway), Hadoop, Scala, Spark, Hive, Postgres, Informatica}
@@ -275,18 +281,21 @@
 \cvevent{2019}{Data and Digital Specialist}{Heineken | FMCG - Beverages}
 {
 {Led the execution of Heineken's data and digital strategy in Australia and New Zealand.
-Collaborated with multiple business stakeholders to define project requirements, establish project constraints, and manage progress, iteratively developing and delivering on project milestones.},
+		Collaborated with multiple business stakeholders to define project requirements, establish project constraints, and manage progress, iteratively developing and delivering on project milestones.},
 {Established new business relationships with government, business, and academic communities, ensuring the delivery of innovations within Heineken's supply chain.},
 {Created new business relationships with government, business, and academic community ensuring to deliver innovations within Heineken's supply chain}
-}{}
+	{Used PowerBi to create the data warehouses visualisation layer of Heineken NZ Supply Chain, reducing company FTEs by 3.0.
+	}
+}
+{Python, SQL, Power BI, Javascript (NodeJs, VueJs), Progressive Web Applications, Microsoft Power Apps}
 % ----------
 % Assurity
 % ----------
 \cvevent{2016-2018}{Test Engineering Consultant}{Assurity Consulting | Gov Tech}
 % Description
 {
-{Worked with the Multiple Government departments on business transformation projects, facilitated integration with new partners, and improved the accessibility of government services. Bolstered the security and dependability of our government software while adeptly communicating trade-offs to various internal \& external stakeholders.},
-{Collaborated with the entire project team shape system architecture and feature design, and ensured quality of new functionalities in a continual and iterative fashion.}
+	{Worked with the Multiple Government departments on business transformation projects, facilitated integration with new partners, and improved the accessibility of government services. Bolstered the security and dependability of our government software while adeptly communicating trade-offs to various internal \& external stakeholders.},
+	{Collaborated with the entire project team shape system architecture and feature design, and ensured quality of new functionalities in a continual and iterative fashion.}
 }
 % Tech
 { Selenium, Webdriver, Junit, Java, Maven, SQL, Oracle SQL, Jenkins, Cucumber, Groovy}
@@ -303,21 +312,21 @@ Collaborated with multiple business stakeholders to define project requirements,
 \pagebreak
 % Education    
 % ----------
-    \cvsection{Education}
-    
-    \cvevent{2018}{Graduate Diploma of Software Engineering}{Toi Ohomai Institute of Technology}{
-    	{\textbf{Final Project:} NZ Rugby Sevens Championship Tournament PWA},
-    	{\textbf{Electives:} AI, Database Engineering, UI Design, Business Analysis}
-    }{MSSql, Enterprise Architect, Javascript (Vue, Jest), C\#, Python (Pandas, Numpy, Scipy)}
-    
-    \cvevent{2012 - 2015}{Bachelor of Arts}{Victoria University of Wellington}{
-            {{\textbf{Major:} Economics} \hspace{187pt} {\textbf{Electives:} Philosophy, Computer Science} },
-    	{\textbf{Minors:} English Literature, Mathematics}
-    }{}
-    
-    \cvevent{}{Certifications}{Professional \& Ad-Professional}{
-    {\textbf{Foundation Certification} - International Software Testing Qualifications Board},
-    {\textbf{NZ Speech and Drama Qualifications} - New Zealand Speech Board}
+\cvsection{Education}
+
+\cvevent{2018}{Graduate Diploma of Software Engineering}{Toi Ohomai Institute of Technology}{
+	{\textbf{Final Project:} NZ Rugby Sevens Championship Tournament PWA},
+	{\textbf{Electives:} AI, Database Engineering, UI Design, Business Analysis}
+}{MSSql, Enterprise Architect, Javascript (Vue, Jest), C\#, Python (Pandas, Numpy, Scipy)}
+
+\cvevent{2012 - 2015}{Bachelor of Arts}{Victoria University of Wellington}{
+	{{\textbf{Major:} Economics} \hspace{187pt} {\textbf{Electives:} Philosophy, Computer Science} },
+	{\textbf{Minors:} English Literature, Mathematics}
+}{}
+
+\cvevent{}{Certifications}{Professional \& Ad-Professional}{
+	{\textbf{Foundation Certification} - International Software Testing Qualifications Board},
+	{\textbf{NZ Speech and Drama Qualifications} - New Zealand Speech Board}
 }{}
 % ----------
 
